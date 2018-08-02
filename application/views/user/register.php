@@ -1,7 +1,6 @@
 
-<p>
     <?php echo $this->session->flashdata('verify_msg'); ?>
-</p>
+
  <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -26,35 +25,39 @@
                     </div>
                     <!-- Form -->
                   <?php $attributes = array("name" => "registrationform");
-echo form_open("admin/register", $attributes);?>
+echo form_open("user/register", $attributes);?>
                         <div class="row p-b-30">
                             <div class="col-12">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input class="form-control form-control-lg" name="firstname" placeholder="First Name" type="text" value="<?php echo set_value('fname'); ?>" /> <span style="color:red"><?php echo form_error('firstname'); ?></span>
+                                    <input class="form-control form-control-lg" name="firstname" placeholder="First Name" type="text" value="<?php echo set_value('fname'); ?>" /> 
                                    
                                 </div>
+                                <span style="color:red"><?php echo form_error('firstname'); ?></span>
                                 <!-- email -->
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
                                     </div>
-                                    <input class="form-control form-control-lg" name="email" placeholder="Email-ID" type="text" value="<?php echo set_value('email'); ?>" /> <span style="color:red"><?php echo form_error('email'); ?></span>
+                                    <input class="form-control form-control-lg" name="email" placeholder="Email-ID" type="text" value="<?php echo set_value('email'); ?>" /> 
                                 </div>
+                                <span style="color:red"><?php echo form_error('email'); ?></span>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input class="form-control form-control-lg" name="password" placeholder="Password" type="password" /> <span style="color:red"><?php echo form_error('password'); ?></span>
+                                    <input class="form-control form-control-lg" name="password" placeholder="Password" type="password" /> 
                                 </div>
+                                <span style="color:red"><?php echo form_error('password'); ?></span>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input class="form-control form-control-lg" name="cpassword" placeholder="Confirm Password" type="password" /> <span style="color:red"><?php echo form_error('cpassword'); ?></span>
+                                    <input class="form-control form-control-lg" name="cpassword" placeholder="Confirm Password" type="password" /> 
                                 </div>
+                                <span style="color:red"><?php echo form_error('cpassword'); ?></span>
                                 <!-- <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
