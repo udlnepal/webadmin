@@ -1,0 +1,90 @@
+	<!-- Footer section -->
+	<footer class="footer-section">
+	<!-- 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28518.469130446105!2d87.34371380241961!3d26.686601906984546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef68cc0bb8220b%3A0xa6d5c5bec3773ef4!2sPurbanchal+University+College+of+Medical+and+Allied+Science!5e0!3m2!1sen!2snp!4v1532858068951" width="1349" height="454" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+		<div class="container footer-top">
+			<div class="row">
+				<!-- widget -->
+				<div class="col-sm-6 col-lg-3 footer-widget">
+					<div class="about-widget">
+						<div style="margin-top:10px;">
+						<img src="<?php echo base_url(); ?>assets/img/logo.png" alt="purbanchal university" style="max-height:26px; background: #fff;float:left; border-radius: 50%;">
+						<h6 class="pull-left" style="color:#fff; margin-left:10px;">PURBANCHAL UNIVERSITY</h6>
+						</div>
+						<div class="clearfix"></div>
+						<p>Lorem ipsum dolor sit amet, consecter adipiscing elite. Donec minos varius, viverra justo ut, aliquet nisl.</p>
+						<div class="social pt-1">
+							<a href=""><i class="fa fa-twitter-square"></i></a>
+							<a href=""><i class="fa fa-facebook-square"></i></a>
+							<a href=""><i class="fa fa-google-plus-square"></i></a>
+							<a href=""><i class="fa fa-linkedin-square"></i></a>
+							<a href=""><i class="fa fa-rss-square"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- widget -->
+				<div class="col-sm-6 col-lg-3 footer-widget">
+					<h6 class="fw-title">USEFUL LINK</h6>
+					<div class="dobule-link">
+						<ul>
+							<li><a href="">Home</a></li>
+							<li><a href="">About PU</a></li>
+							<li><a href="">Academic Programs</a></li>
+							<li><a href="">Events</a></li>
+							<li><a href="">Gallery</a></li>
+						</ul>
+						<ul>
+							<li><a href="">Policy</a></li>
+							<li><a href="">Term</a></li>
+							<li><a href="">Help</a></li>
+							<li><a href="">FAQs</a></li>
+							<li><a href="">Site map</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- widget -->
+				<div class="col-sm-6 col-lg-3 footer-widget">
+					<h6 class="fw-title">RECENT POST</h6>
+					<ul class="recent-post">
+						<li>
+							<p>Snackable study:How to break <br> up your master's degree</p>
+							<span><i class="fa fa-clock-o"></i>24 Mar 2018</span>
+						</li>
+						<li>
+							<p>Open University plans major <br> cuts to number of staff</p>
+							<span><i class="fa fa-clock-o"></i>24 Mar 2018</span>
+						</li>
+					</ul>
+				</div>
+				<!-- widget -->
+				<div class="col-sm-6 col-lg-3 footer-widget">
+					<h6 class="fw-title">CONTACT</h6>
+					<ul class="contact">
+						<li><p><i class="fa fa-map-marker"></i> Puspalal chowk,Biratnagar, Nepal</p></li>
+						<li><p><i class="fa fa-phone"></i> 977-021-463701/2/3/4/5/6/7/8/9</p></li>
+						<li><p><i class="fa fa-envelope"></i> nfo@purbuniv.edu.np</p></li>
+						<li><p><i class="fa fa-clock-o"></i> Monday - Friday, 08:00AM - 06:00 PM</p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="copyright">
+			<div class="container">
+				<p>&copy; MiDas Technologies Pvt. Ltd</p>
+			</div>		
+		</div>
+	</footer>
+	<!-- Footer section end-->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery.countdown.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/masonry.pkgd.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/magnific-popup.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+	
+</body>
+</html>
