@@ -11,6 +11,7 @@ class User_model extends CI_Model {
         if ($id === 0)
         {
             $query = $this->db->get('user');
+           /* print_r($query); exit();*/
             return $query->result_array();
         }
  
@@ -22,9 +23,11 @@ class User_model extends CI_Model {
     {
         $query = $this->db->get_where('user', array('email' => $email, 'password' => md5($password)));        
         //return $query->num_rows();
+     //   print_r ($query); exit;
         return $query->row_array();
     }
     
+
     public function set_user($id = 0)
     {
         $data = array(

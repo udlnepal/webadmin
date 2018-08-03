@@ -14,13 +14,17 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-	$this->load->view('templates/header');
+ if (!$this->session->userdata('is_logged_in')) {
+            redirect(site_url('user/login'));
+        } else {
+
+	   $this->load->view('templates/header');
 		$this->load->view('templates/headernav');
 		$this->load->view('templates/sidebar');
 		$this->load->view('admin/home');
 		$this->load->view('templates/footer');
 	}
-
+}
 
 	/*public function register()
 	{
