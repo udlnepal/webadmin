@@ -161,7 +161,7 @@
 
             <?php if ($this->session->userdata('is_logged_in')) { 
 
-                    echo '<b>Logged in as:</b> ' . $this->session->userdata('email');
+                    echo '<b>Logged in as:</b> ' . $this->session->userdata('firstname');
                     echo ' | ' . "<a href=" . site_url('user/logout') . ">Logout</a>";
                 } else {$this->load->view('user/register');}
             ?>    

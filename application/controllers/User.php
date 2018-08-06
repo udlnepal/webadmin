@@ -73,7 +73,7 @@ class User extends CI_Controller {
                          );
                      
                 $this->session->set_userdata($user_data);*/
-              //  $this->session->set_userdata('name',$firstname);
+                $this->session->set_userdata('firstname',$firstname);
                 $this->session->set_userdata('email', $email);
                 $this->session->set_userdata('user_id', $user['id']);
                 $this->session->set_userdata('is_logged_in', true);
