@@ -27,10 +27,7 @@ class Admin extends CI_Controller {
 	}
 }
 
-<<<<<<< HEAD
-	
-	}
-=======
+
 
   public function do_upload()
         {
@@ -67,7 +64,7 @@ class Admin extends CI_Controller {
                         $this->load->view('templates/footer');
                 }
         }
->>>>>>> fe553f654b50a41761a3b416e3a24d7e85623865
+
 
 
 
