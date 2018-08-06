@@ -3,9 +3,18 @@
 	<header class="header-section">
 		<div class="container">
 			<!-- logo -->
-			<a href="index.html" class="site-logo"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="purbanchal university" class="pull-left"> <h5 class="pull-left site-title" style="margin:5px 10px;">Purbanchal University</h5>
+			<?php foreach ($header_title_setup as $ht_item): ?>
+			
+			<a href="index.html" class="site-logo"><img src="<?php echo base_url(); ?>assets/img/<?php echo $ht_item['logo_image_name']; ?>" alt="purbanchal university" class="pull-left"> 
+
+
+
+
+
+				<h5 class="pull-left site-title" style="margin:5px 10px;"><?php echo $ht_item['site_title']; ?></h5>
 				 <h5 class="site-title" style="margin-left:75px;">पूर्वाञ्चल विश्वविद्यालय</h5>
 			</a>
+<?php endforeach; ?>
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
