@@ -69,11 +69,8 @@ class Admin extends CI_Controller {
 
 /*$this->load->view('upload_success',$data);
 }*/
-                        $this->load->view('templates/header',$data);
-                        $this->load->view('templates/headernav');
-                        $this->load->view('templates/sidebar');
-                        $this->load->view('admin/home', $data);
-                        $this->load->view('templates/footer');
+                        redirect('admin',$data);
+
                 }
         }
 

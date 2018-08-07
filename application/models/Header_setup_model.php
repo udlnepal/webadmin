@@ -70,6 +70,13 @@ class Header_setup_model extends CI_Model {
         }
     }
 
+public function get_header_left_menu()
+    {
+       
+    $query = $this->db->get_where('header_left_menu');
+    return $query->result_array();
+    }
+
    /*
      public function get_news_events_byid($ne_ql_id = 0)
     {

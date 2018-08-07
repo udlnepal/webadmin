@@ -17,9 +17,12 @@ public function index()
 	{
 		
 		$data['header_title_setup'] = $this->header_setup_model->get_header_title();
-		
-	$this->load->view('includes/header',$data);
-	
+
+		$data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
+
+
+	//	print_r ($menudata); exit;
+		$this->load->view('includes/header',$data);
 		$this->load->view('includes/navigation',$data);
 	//	$this->load->view('templates/sidebar');
 		$this->load->view('site/home');

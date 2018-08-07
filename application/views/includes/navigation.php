@@ -1,4 +1,6 @@
 
+	
+
 	<!-- header section -->
 	<header class="header-section">
 		<div class="container">
@@ -19,14 +21,16 @@
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-info">
+				<?php foreach ($header_left_menu as $hlmenu):?>
 				<div class="hf-item">
-					<i class="fa fa-clock-o pull-left"></i>
-					<p class="pull-left" style="margin-top:10px;"><span><a href="#">eProcurement System</a></span></p>
+					<i class="<?php echo $hlmenu['icon_class'] ?> pull-left"></i>
+					<p class="pull-left" style="margin-top:10px;"><span><a href="<?php echo $hlmenu['hl_menu_link'] ?>"><?php echo $hlmenu['hl_menu_title'] ?></a></span></p>
 				</div>
-				<div class="hf-item">
+				<?php endforeach; ?>
+				<!-- <div class="hf-item">
 					<i class="fa fa-envelope pull-left"></i>
 					<p class="pull-left" style="margin-top:10px;"><span><a href="#">Check Mail</a></span></p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</header>
