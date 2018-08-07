@@ -64,7 +64,7 @@
                                         <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-left control-label col-form-label">Site Title:</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control"  name="site_title">
+                                            <input type="text" class="form-control" required=""  name="site_title" placeholder="Enter New Title For The Site">
                                         </div>
                                         <div class="col-sm-2 text-right"><button class="btn btn-info">Update</button></div>
                                     </div>

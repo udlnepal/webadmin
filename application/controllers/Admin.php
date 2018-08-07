@@ -83,11 +83,8 @@ class Admin extends CI_Controller {
 public function set_site_title(){
                         $titledata = array('site_title'=>$this->input->post('site_title'));
                         $this->header_setup_model->set_header_title(1,$titledata);    
-                        $this->load->view('templates/header',$titledata);
-                        $this->load->view('templates/headernav');
-                        $this->load->view('templates/sidebar');
-                        $this->load->view('admin/home', $titledata);
-                        $this->load->view('templates/footer');
+                        redirect('admin',$titledata);
+                  
 	}
 
 }
