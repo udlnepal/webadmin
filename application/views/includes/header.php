@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Purbanchal University</title>
+	
+	<title>
+<?php foreach ($header_title_setup as $ht_item): ?>
+		<?php echo $ht_item['site_title']; ?>
+			<?php endforeach; ?>
+		</title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content="Purbanchal University">
 	<meta name="keywords" content="event, unica, creative, html">

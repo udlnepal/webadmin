@@ -18,7 +18,7 @@ public function index()
 		
 		$data['header_title_setup'] = $this->header_setup_model->get_header_title();
 		
-	$this->load->view('includes/header');
+	$this->load->view('includes/header',$data);
 	
 		$this->load->view('includes/navigation',$data);
 	//	$this->load->view('templates/sidebar');

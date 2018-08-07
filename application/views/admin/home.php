@@ -80,7 +80,7 @@
                                       <h4 class="card-title">Header Left Menu</h4>
                                     </div>
                                     <div class="col-lg-12 text-right">
-                                        <button class="btn btn-success">Add New</button> 
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Add New</button> 
                                     </div>
                                     <div class="col-lg-12 mar-10-top">
                                         <table class="table table-bordered table-striped">
@@ -92,38 +92,7 @@
                                                 <td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;&nbsp;<a class="btn btn-danger">Delete</a></td>
                                             </tr>
                                         </table>
-                                    </div>
-
-<!-- here-->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-                                    <!-- here -->
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -138,3 +107,41 @@
    
         </div>
             
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Add New</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Icon Class:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fname" placeholder="For eg: fas fa-wrench">
+                </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Title:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fname" placeholder="Title">
+                </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Url:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="fname" placeholder="Link Url">
+                </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
