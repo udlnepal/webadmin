@@ -13,6 +13,7 @@
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>assets/dist/css/style.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/dist/css/sum.css" rel="stylesheet">
 </head>
 
 <body>
