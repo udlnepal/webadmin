@@ -19,8 +19,18 @@ class Admin extends CI_Controller {
             redirect(site_url('user/login'));
         } else {
 
-	   $this->load->view('templates/header');
-		$this->load->view('templates/headernav');
+    $this->db->select('firstname');
+    $this->db->from('user');
+    $this->db->where('email', $this->session->userdata('email'));
+    $query=$this->db->get()->row();
+    $data['titlename']= $query->firstname;
+    // print_r($titlename);
+    // die();
+   // $titlename; exit;
+   
+
+	   $this->load->view('templates/header',$data);
+		$this->load->view('templates/headernav',$data);
 		$this->load->view('templates/sidebar');
 		$this->load->view('admin/home');
 		$this->load->view('templates/footer');
