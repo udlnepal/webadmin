@@ -87,6 +87,47 @@ public function set_site_title(){
                   
 	}
 
+public function create_header_left_menu(){
+  
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+ 
+        $data['title'] = 'Add new left header menu';
+ 
+        $this->form_validation->set_rules('icon_class', 'Icon Class', 'required');
+        $this->form_validation->set_rules('hl_menu_title', 'Title', 'required');
+        $this->form_validation->set_rules('hl_menu_link', 'Url');
+   
+ 
+ 
+        if ($this->form_validation->run() === FALSE)
+        {
+                        $this->load->view('templates/header',$data);
+                        $this->load->view('templates/headernav');
+                        $this->load->view('templates/sidebar');
+                        $this->load->view('admin/home', $data);
+                        $this->load->view('templates/footer');
+        }
+        else
+        {
+                        $this->header_setup_model->set_header_left_menu();          
+                       /* $this->load->view('templates/header',$data);
+                        $this->load->view('templates/headernav');
+                        $this->load->view('templates/sidebar');
+                        $this->load->view('admin/home', $data);
+                        $this->load->view('templates/footer');*/
+                          redirect('admin',$data);
+                  
+
+        }
+    
+
+}    
+
+
+/* write above here */
 }
+
+
 
 ?>

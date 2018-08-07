@@ -45,6 +45,31 @@ class Header_setup_model extends CI_Model {
 
     }
 
+
+
+     public function set_header_left_menu($id_hlm = 0)
+    {
+        $this->load->helper('url');
+ 
+   
+ 
+        $data = array(
+            'icon_class'=>$this->input->post('icon_class'),
+            'hl_menu_title' => $this->input->post('hl_menu_title'),
+            'hl_menu_link' => $this->input->post('hl_menu_link'),
+          
+        );
+        //print_r($data);
+        
+   
+        if ($id_hlm == 0) {
+            return $this->db->insert('header_left_menu', $data);
+        } else {
+            $this->db->where('id_hlm', $id_hlm);
+            return $this->db->update('header_left_menu', $data);
+        }
+    }
+
    /*
      public function get_news_events_byid($ne_ql_id = 0)
     {

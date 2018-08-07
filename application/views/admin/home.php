@@ -112,6 +112,7 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+    <?php echo form_open('admin/create_header_left_menu'); ?> 
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Add New</h4>
@@ -122,26 +123,27 @@
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Icon Class:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fname" placeholder="For eg: fas fa-wrench">
+                    <input type="text" class="form-control" id="ic" name="icon_class" placeholder="For eg: fas fa-wrench">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fname" placeholder="Title">
+                    <input type="text" class="form-control" id="it" name="hl_menu_title" placeholder="Title">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Url:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="fname" placeholder="Link Url">
+                    <input type="text" class="form-control" id="link" name="hl_menu_link" placeholder="Link Url">
                 </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+<?php echo form_close(); ?>
   </div>
 </div>
