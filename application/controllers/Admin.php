@@ -36,6 +36,8 @@ class Admin extends CI_Controller {
 //$config['max_size']             = 2048;
              //  $config['max_width']            = 50;
              //   $config['max_height']           = 768;
+                $config['overwrite']=TRUE;
+                $config['file_name']='logo';
 
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
@@ -69,10 +71,9 @@ class Admin extends CI_Controller {
 
 
 public function set_site_title(){
-     $titledata = array('site_title'=>$this->input->post('site_title'));
-    $this->header_setup_model->set_header_title(1,$titledata);
-    
- $this->load->view('templates/header',$titledata);
+                        $titledata = array('site_title'=>$this->input->post('site_title'));
+                        $this->header_setup_model->set_header_title(1,$titledata);    
+                        $this->load->view('templates/header',$titledata);
                         $this->load->view('templates/headernav');
                         $this->load->view('templates/sidebar');
                         $this->load->view('admin/home', $titledata);

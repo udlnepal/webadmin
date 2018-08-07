@@ -51,16 +51,7 @@
 
 
                                                     <div class="text-success">
-                                                    <?php //echo $upload_data['file_name'];
-                                                        /*echo "File Uploaded succesfully.";
-                                                    }
-                                                    else{
-                                                        echo "file upload error";
-                                                    }
-
-                                                    ;
-*/
-                                                    ?>
+                                                   
                                                     </div>
                                                 </div>
                                                 
@@ -73,7 +64,7 @@
                                         <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-left control-label col-form-label">Site Title:</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control"  name="site_title" placeholder="Old Site Title">
+                                            <input type="text" class="form-control"  name="site_title">
                                         </div>
                                         <div class="col-sm-2 text-right"><button class="btn btn-info">Update</button></div>
                                     </div>
