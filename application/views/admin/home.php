@@ -173,9 +173,9 @@
             var hl_menu_link =$(this).data('hl_menu_link');
          //   $(".modal-body #city_name").val( city_name );
             //set the forms action to include the city_id
-            $(".modal-body #icon_class").val(icon_class);
-            $(".modal-body #hl_menu_title").val(hl_menu_title);
-            $(".modal-body #hl_menu_link").val(hl_menu_link);
+            $(".modal-body .form-group #icon_class").val(icon_class);
+            $(".modal-body .form-group #hl_menu_title").val(hl_menu_title);
+            $(".modal-body .form-group #hl_menu_link").val(hl_menu_link);
             $(".modal form").attr('action','admin/edit_header_left_menu/'+id_hlm);            
             $('#edithlm').modal('show');
             
