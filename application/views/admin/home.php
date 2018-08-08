@@ -92,7 +92,7 @@
                                                 <td><?php echo $hlm['hl_menu_title'] ?></td>
                                                 <td><?php echo $hlm['hl_menu_link'] ?></td>
                                                 <td class="text-right">
-                                                    <a class="btn btn-warning edit_hlm" data-id="<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
+                                                    <a data-id_hlm="<?php echo $hlm['id_hlm']; ?>" class="btn btn-warning edit_hlm" href="admin/edit_header_left_menu/<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
                                                     <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu/'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                             </tr>
                                             <?php endforeach;?>
@@ -163,14 +163,33 @@
   </div>
 </div>
 
+<script>
+    $(function(){
+        $(document).on("click", ".edit_hlm", function () {
+           
+            var id_hlm = $(this).data('id_hlm');
+            var icon_class= $(this).data('icon_class');
+            var hl_menu_title=$(this).data('hl_menu_title');
+            var hl_menu_link =$(this).data('hl_menu_link');
+         //   $(".modal-body #city_name").val( city_name );
+            //set the forms action to include the city_id
+            $(".modal-body #icon_class").val(icon_class);
+            $(".modal-body #hl_menu_title").val(hl_menu_title);
+            $(".modal-body #hl_menu_link").val(hl_menu_link);
+            $(".modal form").attr('action','admin/edit_header_left_menu/'+id_hlm);            
+            $('#edithlm').modal('show');
+            
+        });
+});
 
+</script>
 
 
 <!-- Modal -->
 <div class="modal fade" id="edithlm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
 
-    <?php echo form_open('admin/edit_header_left_menu/'.$hlm['id_hlm']); ?> 
+    <?php echo form_open('admin/edit_header_left_menu/'); ?> 
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Edit </h4>
@@ -182,19 +201,19 @@
           
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Icon Class:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="ic" name="icon_class" placeholder="For eg: fas fa-wrench" value="<?php echo $hlm['icon_class'] ?>">
+                    <input type="text" class="form-control" id="icon_class" name="icon_class"  value="">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="it" name="hl_menu_title" placeholder="Title" value="<?php echo $hlm['hl_menu_title'] ?>">
+                    <input type="text" class="form-control" id="hl_menu_title" name="hl_menu_title"  value="">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Url:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="link" name="hl_menu_link" placeholder="Link Url" value="<?php echo $hlm['hl_menu_link'] ?>">
+                    <input type="text" class="form-control" id="hl_menu_link" name="hl_menu_link" value="">
                 </div>
         </div>
       </div>
@@ -206,3 +225,4 @@
 <?php echo form_close(); ?>
   </div>
 </div>
+<!-- modal end-->

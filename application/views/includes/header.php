@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/animate.css"/>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css"/>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css"/>
+	  <script src="<?php echo base_url();?>assets/libs/jquery/dist/jquery.min.js"></script>
 
 
 	<!--[if lt IE 9]>
