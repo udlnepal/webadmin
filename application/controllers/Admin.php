@@ -27,7 +27,7 @@ class Admin extends CI_Controller {
     // print_r($titlename);
     // die();
    // $titlename; exit;
-   
+   $data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
 
 	   $this->load->view('templates/header',$data);
 		$this->load->view('templates/headernav',$data);
@@ -121,7 +121,57 @@ public function create_header_left_menu(){
 
 }    
 
+public function edit_header_left_menu($id_hlm)
+    {
 
+        $id = $this->uri->segment(3);
+        
+        if (empty($id_hlm))
+        {
+            echo"i am here"; exit;
+            show_404();
+        }
+        
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $data['title'] = 'Edit a admin item';        
+        $data['header_left_menu'] = $this->header_setup_model->get_header_left_menubyid($id_hlm);
+        $this->form_validation->set_rules('icon_class', 'Icon class', 'required');
+        $this->form_validation->set_rules('hl_menu_title', 'Menu Title', 'required');
+        $this->form_validation->set_rules('hl_menu_link', 'Url');
+       // $this->form_validation->set_rules('link_address','Link Address','required');
+        if ($this->form_validation->run() === FALSE)
+        {
+           // echo"first"; exit;
+            $this->load->view('templates/header', $data);
+           $this->load->view('/admin/home', $data);
+            $this->load->view('templates/footer');
+ 
+        }
+        else
+        {
+           // echo"second";exit;
+            $this->header_setup_model->set_header_left_menu($id_hlm);
+            $this->load->view('admin/home');
+            redirect( base_url() . 'admin');
+        }
+    }
+
+ public function delete_left_menu()
+    {
+        $id_hlm = $this->uri->segment(3);
+        
+        if (empty($id_hlm))
+        {
+            show_404();
+        }
+                
+        $new_items = $this->header_setup_model->get_header_left_menubyid($id_hlm);
+        
+        $this->header_setup_model->delete_left_menu($id_hlm);        
+        redirect( base_url() . 'admin');        
+    }
 /* write above here */
 }
 

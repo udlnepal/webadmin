@@ -85,12 +85,16 @@
                                     <div class="col-lg-12 mar-10-top">
                                         <table class="table table-bordered table-striped">
                                             <tr><th>Icon Class</th><th>Title</th><th>Url</th><th>Action</th></tr>
+                                            <?php foreach($header_left_menu as $hlm):?>
                                             <tr>
-                                                <td>Test</td>
-                                                <td>Test</td>
-                                                <td>Test</td>
-                                                <td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;&nbsp;<a class="btn btn-danger">Delete</a></td>
+                                                <td><i class="<?php echo $hlm['icon_class'] ?>"></i>&nbsp;<?php echo $hlm['icon_class'] ?></td>
+                                                <td><?php echo $hlm['hl_menu_title'] ?></td>
+                                                <td><?php echo $hlm['hl_menu_link'] ?></td>
+                                                <td class="text-right">
+                                                    <a class="btn btn-warning" data-id="<?php echo $hlm['id_hlm'] ?>" data-toggle="modal" data-target="#edit_head_menu">Edit</a>&nbsp;&nbsp;
+                                                    <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </table>
                                     </div>                                    
                                 </div>
@@ -116,6 +120,45 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Add New</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Icon Class:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ic" name="icon_class" placeholder="For eg: fas fa-wrench">
+                </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Title:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="it" name="hl_menu_title" placeholder="Title">
+                </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 control-label col-form-label text-left">Url:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="link" name="hl_menu_link" placeholder="Link Url">
+                </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+<?php echo form_close(); ?>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="edit_head_menu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <?php echo form_open('admin/edit_header_left_menu/'.$hlm['id_hlm']); ?> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Edit </h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         
       </div>
