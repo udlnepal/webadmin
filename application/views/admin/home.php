@@ -77,6 +77,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-8">
+
                                       <h4 class="card-title">Header Left Menu</h4>
                                     </div>
                                     <div class="col-lg-12 text-right">
@@ -91,8 +92,8 @@
                                                 <td><?php echo $hlm['hl_menu_title'] ?></td>
                                                 <td><?php echo $hlm['hl_menu_link'] ?></td>
                                                 <td class="text-right">
-                                                    <a class="btn btn-warning" data-id="<?php echo $hlm['id_hlm'] ?>" data-toggle="modal" data-target="#edit_head_menu">Edit</a>&nbsp;&nbsp;
-                                                    <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                                    <a class="btn btn-warning edit_hlm" data-id="<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
+                                                    <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu/'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </table>
@@ -110,15 +111,25 @@
             <!-- ============================================================== -->
    
         </div>
-            
+
+
+
+
+
+
+
+
+
 
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+
     <?php echo form_open('admin/create_header_left_menu'); ?> 
     <div class="modal-content">
       <div class="modal-header">
+       
         <h4 class="modal-title" id="myModalLabel">Add New</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         
@@ -152,9 +163,13 @@
   </div>
 </div>
 
+
+
+
 <!-- Modal -->
-<div class="modal fade" id="edit_head_menu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="edithlm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+
     <?php echo form_open('admin/edit_header_left_menu/'.$hlm['id_hlm']); ?> 
     <div class="modal-content">
       <div class="modal-header">
@@ -164,21 +179,23 @@
       </div>
       <div class="modal-body">
         <div class="form-group row">
+          
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Icon Class:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="ic" name="icon_class" placeholder="For eg: fas fa-wrench">
+                     
+                    <input type="text" class="form-control" id="ic" name="icon_class" placeholder="For eg: fas fa-wrench" value="<?php echo $hlm['icon_class'] ?>">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="it" name="hl_menu_title" placeholder="Title">
+                    <input type="text" class="form-control" id="it" name="hl_menu_title" placeholder="Title" value="<?php echo $hlm['hl_menu_title'] ?>">
                 </div>
         </div>
         <div class="form-group row">
             <label for="fname" class="col-sm-3 control-label col-form-label text-left">Url:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="link" name="hl_menu_link" placeholder="Link Url">
+                    <input type="text" class="form-control" id="link" name="hl_menu_link" placeholder="Link Url" value="<?php echo $hlm['hl_menu_link'] ?>">
                 </div>
         </div>
       </div>

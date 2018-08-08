@@ -43,15 +43,14 @@ class Admin extends CI_Controller {
         {
                 $config['upload_path']          = './assets/img/';
                 $config['allowed_types']        = 'gif|jpg|png';
-//$config['max_size']             = 2048;
-             //  $config['max_width']            = 50;
-             //   $config['max_height']           = 768;
+                //$config['max_size']             = 2048;
+                //$config['max_width']            = 50;
+                //$config['max_height']           = 768;
                 $config['overwrite']=TRUE;
                 $config['file_name']='logo';
 
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
-               // print_r($file);exit
 
                 if ( ! $file )
                 {
@@ -62,13 +61,7 @@ class Admin extends CI_Controller {
                 else
                 {
                         $data = array('upload_data' => $this->upload->data());
-                        // print_r($data['upload_data']['file_name']); exit;
                         $this->header_setup_model->set_logo_name(1, $data['upload_data']['file_name']);
-
-                      // print_r($file_name);exit;
-
-/*$this->load->view('upload_success',$data);
-}*/
                         redirect('admin',$data);
 
                 }
@@ -108,11 +101,7 @@ public function create_header_left_menu(){
         else
         {
                         $this->header_setup_model->set_header_left_menu();          
-                       /* $this->load->view('templates/header',$data);
-                        $this->load->view('templates/headernav');
-                        $this->load->view('templates/sidebar');
-                        $this->load->view('admin/home', $data);
-                        $this->load->view('templates/footer');*/
+
                           redirect('admin',$data);
                   
 
