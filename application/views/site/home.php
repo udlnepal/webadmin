@@ -2,7 +2,9 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/hero-slider/1.jpg">
+			<?php foreach ($slider_setup as $sls): ?>
+
+			<div class="hs-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/hero-slider/<?php echo $sls['slider_img_name']; ?>">
 				<div class="hs-text">
 					<div class="container">
 						<div class="row">
@@ -16,20 +18,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="hs-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/hero-slider/2.jpg">
-				<div class="hs-text">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-8">
-								<div class="hs-subtitle">Award Winning UNIVERSITY</div>
-								<h2 class="hs-title">An investment in knowledge pays the best interest.</h2>
-								<p class="hs-des">Education is not just about going to school and getting a degree. It's about widening your<br> knowledge and absorbing the truth about life. Knowledge is power.</p>
-								<div class="site-btn">GET STARTED</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<?php endforeach;?>
 		</div>
 	</section>
 	<!-- Hero section end -->
