@@ -16,10 +16,6 @@ class Slider_setup extends CI_Controller {
 
                 $config['upload_path']          = './assets/img/hero-slider';
                 $config['allowed_types']        = 'jpg|jpeg';
-                //$config['max_size']             = 2048;
-                //$config['max_width']            = 50;
-                //$config['max_height']           = 768;
-               // $config['overwrite']=TRUE;
                 $config['file_name']='0';
 
                 $this->load->library('upload', $config);
@@ -36,8 +32,7 @@ class Slider_setup extends CI_Controller {
                 else
                 {
                 	
-                        $data = array('upload_data' => $this->upload->data());
-                        
+                        $data = array('upload_data' => $this->upload->data());                       
                        	$this->slider_setup_model->set_slider_name($ss_id = 0,$data['upload_data']['file_name']);
                         redirect('slider_setup',$data);
 
