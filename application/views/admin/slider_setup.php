@@ -23,7 +23,77 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
+            
+
+
+
+
+
             <div class="container-fluid">
+                <!-- hidden edit field-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col-lg-12">
+                                    <h4>Edit Slider</h4>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                <!-- Edit Form -->
+                <?php echo form_open('slider_setup/edit/'.$sls['ss_id']); ?>
+                <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Primary Image:</label>
+                <div class="col-sm-9">
+                    <input type="file" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
+                </div>               
+            </div>
+
+            <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Primary Title:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" required="" name="primary_slider_title" value="<?php echo $sls['primary_slider_title'] ?>">
+                </div>               
+            </div>
+             <div class="form-group row">
+                <label for="sec_slider_title" class="col-sm-3 text-left control-label col-form-label">Secondary Title:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="sec_slider_title" value="<?php echo $sls['sec_slider_title'] ?>">
+                </div>               
+            </div>
+            <div class="form-group row">
+                <label for="slider_text" class="col-sm-3 text-left control-label col-form-label">Slider Text:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" required="" name="slider_text" value="<?php echo $sls['slider_text'] ?>">
+                </div>               
+            </div>
+            <div class="form-group row">
+                <label for="slider_btn_text" class="col-sm-3 text-left control-label col-form-label">Slider Button Text:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" required="" name="slider_btn_text" value="<?php echo $sls['slider_btn_text'] ?>">
+                </div>               
+            </div>
+            <div class="form-group row">
+                <label for="slider_btn_link" class="col-sm-3 text-left control-label col-form-label">Slider Button Link:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" required="" name="slider_btn_link" value="<?php echo $sls['slider_btn_link'] ?>">
+                </div>               
+            </div>
+            <div class="form-group row text-right">
+              <div class="col-lg-12"><a href="#" class="btn btn-info">Update</a></div>
+            </div>
+            <?php echo form_close(); ?>
+                <!-- Edit Form -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- hidden edit field -->
             	<div class="row">
             	<div class="col-md-12">
             		<div class="card">
@@ -48,7 +118,9 @@
                                             Content: <?php echo $sls['slider_text']; ?><br>
                                             Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
-                                            <td><a href="#" class="btn btn-warning">Edit</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger">Delete</a></td></tr>
+                                            <td>
+                                                <a href="<?php echo base_url('slider_setup/edit/'.$sls['ss_id']); ?>" class="btn btn-warning">Edit</a>
+                                                &nbsp;&nbsp;<a href="<?php echo base_url('slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                     	<?php endforeach; ?>
                                     	</table>
 

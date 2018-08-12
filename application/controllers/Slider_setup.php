@@ -40,6 +40,63 @@ class Slider_setup extends CI_Controller {
         }
 
 
+         public function edit(){
+        $ss_id = $this->uri->segment(3);
+        
+        if (empty($ss_id))
+        {
+            show_404();
+        }
+         $this->load->helper('form');
+        $this->load->library('form_validation');
+
+/*echo "i am here"; exit;*/
+        //$data['title'] = 'Edit a admin item';       
+
+        $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
+        $this->form_validation->set_rules('slider_img_name');
+        $this->form_validation->set_rules('primary_slider_title');
+        $this->form_validation->set_rules('sec_slider_title');
+        $this->form_validation->set_rules('slider_text');
+        $this->form_validation->set_rules('slider_btn_text');
+        $this->form_validation->set_rules('slider_btn_link');
+        if ($this->form_validation->run() === FALSE)
+        {
+           // echo"first"; exit;
+
+            $this->load->view('templates/header', $data);
+           $this->load->view('admin/slider_setup', $data);
+            $this->load->view('templates/footer');
+ 
+        }
+        else
+        {
+           echo "fine"; exit;
+           // echo"second";exit;
+            $this->slider_setup_model->set_slider_name($ss_id);
+            $this->load->view('admin/slider_setup');
+            redirect( base_url() . 'slider_setup');
+        }
+
+
+         }
+
+
+    public function delete_slider()
+        {
+        $ss_id = $this->uri->segment(3);
+        
+        if (empty($ss_id))
+        {
+            show_404();
+        }
+        //  echo "i am here"; exit;      
+        $slider_setup = $this->slider_setup_model->get_slider_image_byid($ss_id);
+        $this->slider_setup_model->delete_slider($ss_id);        
+        redirect( base_url() . 'slider_setup');        
+        }
+
+
 	public function index()
 	{
  	if (!$this->session->userdata('is_logged_in')) {
