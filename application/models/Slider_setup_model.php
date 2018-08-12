@@ -14,6 +14,15 @@ class Slider_setup_model extends CI_Model {
  
         $data = array(
             'slider_img_name'=>$file_name,
+         //    'title' => $this->input->post('title'),
+            'primary_slider_title'=>$this->input->post('primary_slider_title'),
+            'sec_slider_title'=>$this->input->post('sec_slider_title'),
+            'slider_text'=>$this->input->post('slider_text'),
+            'slider_btn_text'=>$this->input->post('slider_btn_text'),
+            'slider_btn_link'=>$this->input->post('slider_btn_link'),
+
+
+
         );
         if ($ss_id === 0)
         {

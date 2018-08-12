@@ -43,9 +43,10 @@
                                     		<?php foreach($slider_setup as $sls): ?>
                                     		<tr><td><img style="height: 75px; width:100px; " src="assets/img/hero-slider/<?php echo $sls['slider_img_name'] ?>"></td>
                                             <td>
-                                            Primary Title: <b class="text-bold">Some Title</b><br>
-                                            Secondary Title: <b class="text-warning">Some other title</b><br>
-                                            Content: Some Paragraph about slider<br>    
+                                            Primary Title: <b class="text-bold"><?php echo $sls['primary_slider_title'] ?></b><br>
+                                            Secondary Title: <b class="text-warning"><?php echo $sls['sec_slider_title']; ?></b><br>
+                                            Content: <?php echo $sls['slider_text']; ?><br>
+                                            Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
                                             <td><a href="#" class="btn btn-warning">Edit</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger">Delete</a></td></tr>
                                     	<?php endforeach; ?>
@@ -91,7 +92,7 @@
              <div class="form-group row">
                 <label for="sec_slider_title" class="col-sm-3 text-left control-label col-form-label">Secondary Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" required="" name="sec_slider_title" placeholder="Enter Secondary Title">
+                    <input type="text" class="form-control" name="sec_slider_title" placeholder="Enter Secondary Title">
                 </div>               
             </div>
             <div class="form-group row">
