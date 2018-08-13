@@ -54,6 +54,7 @@ class Slider_setup extends CI_Controller {
         //$data['title'] = 'Edit a admin item';       
 
         $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
+        $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
         $this->form_validation->set_rules('slider_img_name');
         $this->form_validation->set_rules('primary_slider_title');
         $this->form_validation->set_rules('sec_slider_title');
@@ -64,14 +65,15 @@ class Slider_setup extends CI_Controller {
         {
            // echo"first"; exit;
 
-            $this->load->view('templates/header', $data);
+           /* $this->load->view('templates/header', $data);
            $this->load->view('admin/slider_setup', $data);
-            $this->load->view('templates/footer');
+            $this->load->view('templates/footer');*/
+            redirect('slider_setup',$data);
  
         }
         else
         {
-           echo "fine"; exit;
+          // echo "fine"; exit;
            // echo"second";exit;
             $this->slider_setup_model->set_slider_name($ss_id);
             $this->load->view('admin/slider_setup');

@@ -2,7 +2,7 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-             <div class="page-breadcrumb">
+            <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title"></h4>
@@ -26,12 +26,34 @@
             
 
 
+<?php $sls['ss_id']=0; 
+$sls['primary_slider_title']="Primary Title ";
+$sls['sec_slider_title']="Secondary Title ";
+$sls['slider_text']="Slider Text ";
+$sls['slider_btn_text']="Slider  Button Text ";
+$sls['slider_btn_link']="Slider Button Link ";
+?>
+<style>
+.hidden_field{
+    display: none;
+}
+
+</style>
+<script>
+$( document ).ready(function() {
+$( ".edit_btn_slider" ).click(function() {
+$( ".hidden_field" ).removeClass("hidden_field");
+$( ".hidden_field" ).slideDown();
+
+});
+});
+</script>
 
 
 
             <div class="container-fluid">
                 <!-- hidden edit field-->
-                <div class="row">
+                <div class="row hidden_field" >
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
@@ -43,7 +65,7 @@
                 <!-- Edit Form -->
                 <?php echo form_open('slider_setup/edit/'.$sls['ss_id']); ?>
                 <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Primary Image:</label>
+                <label for="userfile" class="col-sm-3 text-left control-label col-form-label">Primary Image:</label>
                 <div class="col-sm-9">
                     <input type="file" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
                 </div>               
@@ -119,7 +141,7 @@
                                             Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
                                             <td>
-                                                <a href="<?php echo base_url('slider_setup/edit/'.$sls['ss_id']); ?>" class="btn btn-warning">Edit</a>
+                                                <a href="<?php echo base_url('slider_setup/edit/'.$sls['ss_id']); ?>" class="btn btn-warning edit_btn_slider">Edit</a>
                                                 &nbsp;&nbsp;<a href="<?php echo base_url('slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                     	<?php endforeach; ?>
                                     	</table>
