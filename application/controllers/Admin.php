@@ -9,24 +9,31 @@ class Admin extends CI_Controller {
         $this->load->model('header_setup_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
+        if (!$this->session->userdata('is_logged_in')) {
+            redirect(site_url('user/login'));
+        } 
  
     }
 
 
 	public function index()
 	{
- if (!$this->session->userdata('is_logged_in')) {
+/* if (!$this->session->userdata('is_logged_in')) {
             redirect(site_url('user/login'));
         } else {
-
-    $this->db->select('firstname');
+/**/
+ /*   $this->db->select('firstname');
     $this->db->from('user');
     $this->db->where('email', $this->session->userdata('email'));
     $query=$this->db->get()->row();
-    $data['titlename']= $query->firstname;
+    $data['titlename']= $query->firstname;*/
+
+
     // print_r($titlename);
     // die();
    // $titlename; exit;
+
+$data['titlename']=$this->admin_model->get_logged_user();
    $data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
 
 	   $this->load->view('templates/header',$data);
@@ -35,7 +42,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/home');
 		$this->load->view('templates/footer');
 	}
-}
 
 
 
