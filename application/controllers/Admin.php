@@ -33,8 +33,8 @@ class Admin extends CI_Controller {
     // die();
    // $titlename; exit;
 
-$data['titlename']=$this->admin_model->get_logged_user();
-   $data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
+    $data['titlename']=$this->admin_model->get_logged_user();
+    $data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
 
 	   $this->load->view('templates/header',$data);
 		$this->load->view('templates/headernav',$data);
