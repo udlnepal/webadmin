@@ -88,11 +88,11 @@
                                             <tr><th>Icon Class</th><th>Title</th><th>Url</th><th>Action</th></tr>
                                             <?php foreach($header_left_menu as $hlm):?>
                                             <tr>
-                                                <td><i class="<?php echo $hlm['icon_class'] ?>"></i>&nbsp;<?php echo $hlm['icon_class'] ?></td>
+                                                <td><i class="<?php echo $hlm['icon_class'] ?>"></i>&nbsp;<?php echo $hlm['icon_class']?></td>
                                                 <td><?php echo $hlm['hl_menu_title'] ?></td>
                                                 <td><?php echo $hlm['hl_menu_link'] ?></td>
                                                 <td class="text-right">
-                                                    <a data-id_hlm="<?php echo $hlm['id_hlm']; ?>" class="btn btn-warning edit_hlm" href="admin/edit_header_left_menu/<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
+                                                    <a data-id_hlm="<?php echo $hlm['id_hlm']; ?>" data-icon_class="<?php echo $hlm['icon_class'];?>" data-hl_menu_title="<?php echo $hlm['hl_menu_title'];?>" data-hl_menu_link="<?php echo $hlm['hl_menu_link'];?>" class="btn btn-warning edit_hlm" href="admin/edit_header_left_menu/<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
                                                     <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu/'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                             </tr>
                                             <?php endforeach;?>
@@ -171,6 +171,7 @@
             var icon_class= $(this).data('icon_class');
             var hl_menu_title=$(this).data('hl_menu_title');
             var hl_menu_link =$(this).data('hl_menu_link');
+            //alert(icon_class);
          //   $(".modal-body #city_name").val( city_name );
             //set the forms action to include the city_id
             $(".modal-body .form-group #icon_class").val(icon_class);
