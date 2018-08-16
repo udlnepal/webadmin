@@ -88,7 +88,7 @@ class Slider_setup extends Admin_controller {
 
     public function delete_slider()
         {
-        $ss_id = $this->uri->segment(3);
+        $ss_id = $this->uri->segment(4);
         
         if (empty($ss_id))
         {

@@ -63,7 +63,7 @@ $( ".hidden_field" ).slideDown();
                                     <div class="row">
                                         <div class="col-lg-12">
                 <!-- Edit Form -->
-                <?php echo form_open('slider_setup/edit/'.$sls['ss_id']); ?>
+                <?php echo form_open('admin/slider_setup/edit/'.$sls['ss_id']); ?>
                 <div class="form-group row">
                 <label for="userfile" class="col-sm-3 text-left control-label col-form-label">Primary Image:</label>
                 <div class="col-sm-9">
