@@ -1,5 +1,6 @@
 <?php
-class Slider_setup extends CI_Controller {
+include_once(APPPATH.'controllers/Admin_controller.php');
+class Slider_setup extends Admin_controller {
 
 
 	 public function __construct()
@@ -35,7 +36,7 @@ class Slider_setup extends CI_Controller {
                 	
                         $data = array('upload_data' => $this->upload->data());                       
                        	$this->slider_setup_model->set_slider_name($ss_id = 0,$data['upload_data']['file_name']);
-                        redirect('slider_setup',$data);
+                        redirect('admin/slider_setup',$data);
 
                 }
         }
@@ -96,7 +97,7 @@ class Slider_setup extends CI_Controller {
         //  echo "i am here"; exit;      
         $slider_setup = $this->slider_setup_model->get_slider_image_byid($ss_id);
         $this->slider_setup_model->delete_slider($ss_id);        
-        redirect( base_url() . 'slider_setup');        
+        redirect( base_url() . 'admin/slider_setup');        
         }
 
 

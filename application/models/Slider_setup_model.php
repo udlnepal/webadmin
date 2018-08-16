@@ -48,12 +48,13 @@ class Slider_setup_model extends CI_Model {
 
      public function get_slider_image_byid($ss_id = 0)
     {
+        //echo "here";exit;
         if ($ss_id === 0)
         {
             $query = $this->db->get('slider_setup');
             return $query->result_array();
         }
- 
+ //echo "here";
         $query = $this->db->get_where('slider_setup', array('ss_id' => $ss_id));
         return $query->row_array();
     }

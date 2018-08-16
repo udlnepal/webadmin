@@ -133,7 +133,7 @@ $( ".hidden_field" ).slideDown();
                                     	<table class="table table-bordere table-striped">
                                     		<tr><th>Image</th><th>Text Content</th></th><th>Action</th></tr>
                                     		<?php foreach($slider_setup as $sls): ?>
-                                    		<tr><td><img style="height: 75px; width:100px; " src="assets/img/hero-slider/<?php echo $sls['slider_img_name'] ?>"></td>
+                                    		<tr><td><img style="height: 75px; width:100px; " src="../assets/img/hero-slider/<?php echo $sls['slider_img_name'] ?>"></td>
                                             <td>
                                             Primary Title: <b class="text-bold"><?php echo $sls['primary_slider_title'] ?></b><br>
                                             Secondary Title: <b class="text-warning"><?php echo $sls['sec_slider_title']; ?></b><br>
@@ -141,8 +141,8 @@ $( ".hidden_field" ).slideDown();
                                             Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
                                             <td>
-                                                <a href="<?php echo base_url('slider_setup/edit/'.$sls['ss_id']); ?>" class="btn btn-warning edit_btn_slider">Edit</a>
-                                                &nbsp;&nbsp;<a href="<?php echo base_url('slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
+                                                <a href="<?php echo base_url('admin/slider_setup/edit/'.$sls['ss_id']); ?>" class="btn btn-warning edit_btn_slider">Edit</a>
+                                                &nbsp;&nbsp;<a href="<?php echo base_url('admin/slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                     	<?php endforeach; ?>
                                     	</table>
 
@@ -157,7 +157,7 @@ $( ".hidden_field" ).slideDown();
 
  </div>
 
- <?php echo form_open_multipart('slider_setup/do_upload');?>
+ <?php echo form_open_multipart('admin/slider_setup/do_upload');?>
  <div class="modal fade" id="Imageupload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">

@@ -1,8 +1,8 @@
 <?php
-class Admin extends CI_Controller {
+include_once(APPPATH.'controllers/Admin_controller.php');
 
-
-	 public function __construct()
+class Header_setup extends Admin_controller{
+ public function __construct()
     {
      parent::__construct();
         $this->load->model('admin_model');
@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
         } 
  
     }
-
+    
 
 	public function index()
 	{
@@ -167,9 +167,6 @@ public function edit_header_left_menu($id_hlm)
         $this->header_setup_model->delete_left_menu($id_hlm);        
         redirect( base_url() . 'admin');        
     }
-/* write above here */
+
+
 }
-
-
-
-?>
