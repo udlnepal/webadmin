@@ -99,6 +99,8 @@ public function get_header_left_menu()
     
     public function delete_left_menu($id_hlm)
     {
+        // print_r($a);exit;
+      
         $this->db->where('id_hlm', $id_hlm);
         return $this->db->delete('header_left_menu');
     }

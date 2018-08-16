@@ -40,7 +40,7 @@
                                     <div class="col-lg-8">
                                          <?php //$upload_data['filename']="Empty";?>
 
-                                                <?php echo form_open_multipart('admin/do_upload');?>
+                                                <?php echo form_open_multipart('admin/header_setup/do_upload');?>
                                        <div class="form-group row">
                                             <label class="col-md-3">Upload Logo:</label>
                                             <div class="col-md-7">
@@ -60,7 +60,7 @@
                                             <?php echo form_close(); ?>
 
                                         </div>
-                                        <?php echo form_open('admin/set_site_title'); ?>
+                                        <?php echo form_open('admin/header_setup/set_site_title'); ?>
                                         <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-left control-label col-form-label">Site Title:</label>
                                         <div class="col-sm-7">
@@ -92,8 +92,8 @@
                                                 <td><?php echo $hlm['hl_menu_title'] ?></td>
                                                 <td><?php echo $hlm['hl_menu_link'] ?></td>
                                                 <td class="text-right">
-                                                    <a data-id_hlm="<?php echo $hlm['id_hlm']; ?>" data-icon_class="<?php echo $hlm['icon_class'];?>" data-hl_menu_title="<?php echo $hlm['hl_menu_title'];?>" data-hl_menu_link="<?php echo $hlm['hl_menu_link'];?>" class="btn btn-warning edit_hlm" href="admin/edit_header_left_menu/<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
-                                                    <a class="btn btn-danger"href="<?php echo site_url('admin/delete_left_menu/'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                                    <a data-id_hlm="<?php echo $hlm['id_hlm']; ?>" data-icon_class="<?php echo $hlm['icon_class'];?>" data-hl_menu_title="<?php echo $hlm['hl_menu_title'];?>" data-hl_menu_link="<?php echo $hlm['hl_menu_link'];?>" class="btn btn-warning edit_hlm" href="admin/header_setup/edit_header_left_menu/<?php echo $hlm['id_hlm']; ?>" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
+                                                    <a class="btn btn-danger"href="<?php echo site_url('admin/header_setup/delete_left_menu/'.$hlm['id_hlm']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                             </tr>
                                             <?php endforeach;?>
                                         </table>
@@ -126,7 +126,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
 
-    <?php echo form_open('admin/create_header_left_menu'); ?> 
+    <?php echo form_open('admin/header_setup/create_header_left_menu'); ?> 
     <div class="modal-content">
       <div class="modal-header">
        
@@ -177,7 +177,7 @@
             $(".modal-body .form-group #icon_class").val(icon_class);
             $(".modal-body .form-group #hl_menu_title").val(hl_menu_title);
             $(".modal-body .form-group #hl_menu_link").val(hl_menu_link);
-            $(".modal form").attr('action','admin/edit_header_left_menu/'+id_hlm);            
+            $(".modal form").attr('action','admin/header_setup/edit_header_left_menu/'+id_hlm);            
             $('#edithlm').modal('show');
             
         });
@@ -190,7 +190,7 @@
 <div class="modal fade" id="edithlm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
 
-    <?php echo form_open('admin/edit_header_left_menu/'); ?> 
+    <?php echo form_open('admin/header_setup/edit_header_left_menu/'); ?> 
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Edit </h4>

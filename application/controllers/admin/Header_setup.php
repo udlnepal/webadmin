@@ -121,6 +121,7 @@ public function edit_header_left_menu($id_hlm)
 
         $id = $this->uri->segment(3);
         
+        
         if (empty($id_hlm))
         {
             echo"i am here"; exit;
@@ -153,16 +154,17 @@ public function edit_header_left_menu($id_hlm)
         }
     }
 
- public function delete_left_menu()
+ public function delete_left_menu($id)
     {
-        $id_hlm = $this->uri->segment(3);
+        $id_hlm = $id;//$this->uri->segment(3);
+      //  print_r($id_hlm); exit;
         
         if (empty($id_hlm))
         {
             show_404();
         }
                 
-        $new_items = $this->header_setup_model->get_header_left_menubyid($id_hlm);
+        // $new_items = $this->header_setup_model->get_header_left_menubyid($id_hlm);
         
         $this->header_setup_model->delete_left_menu($id_hlm);        
         redirect( base_url() . 'admin');        
