@@ -103,9 +103,9 @@ class Slider_setup extends Admin_controller {
 
 	public function index()
 	{
- 	if (!$this->session->userdata('is_logged_in')) {
+ 	/*if (!$this->session->userdata('is_logged_in')) {
             redirect(site_url('user/login'));
-        } else {
+        } else {*/
 $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
 $data['titlename']=$this->admin_model->get_logged_user();
 
@@ -115,7 +115,7 @@ $data['titlename']=$this->admin_model->get_logged_user();
 		$this->load->view('templates/sidebar');		
 		$this->load->view('admin/slider_setup',$data);
 		$this->load->view('templates/footer');	
-        }
+     /*   }*/
 }
 }
 
