@@ -15,6 +15,7 @@
     <link href="<?php echo base_url();?>assets/dist/css/style.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/dist/css/sum.css" rel="stylesheet">
       <script src="<?php echo base_url();?>assets/libs/jquery/dist/jquery.min.js"></script>
+      <script src="<?php echo base_url();?>assets/extra-libs/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>

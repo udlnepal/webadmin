@@ -16,7 +16,7 @@
 	<link href="<?php echo base_url(); ?>assets/img/favicon.ico" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet"> -->
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css"/>
