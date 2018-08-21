@@ -21,23 +21,16 @@
                                     <div class="col-lg-12 mar-10-top">
                                         <table class="table table-bordered table-striped">
                                             <tbody><tr><th>Menu Name</th><th>Page Title</th><th>Page Content</th><th>Action</th></tr>
-                                                                                        <tr>
-                                                <td><i class="fa fa-wrench"></i>&nbsp;fa fa-wrench</td>
-                                                <td>Eprocurement System</td>
-                                                <td>sadfsadf</td>
-                                                <td class="text-right">
-                                                    <a data-id_hlm="16" data-icon_class="fa fa-wrench" data-hl_menu_title="Eprocurement System" data-hl_menu_link="sadfsadf" class="btn btn-warning edit_hlm" href="admin/header_setup/edit_header_left_menu/16" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
-                                                    <a class="btn btn-danger" href="http://[::1]/webadmin/admin/header_setup/delete_left_menu/16" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                            <?php foreach($menu_setup as $ms): ?>
+                                            <tr><td><?php echo $ms['menu_name'] ?></td>
+                                                <td><?php echo $ms['page_title'] ?></td>
+                                                <td>
+                                                    <?php echo $ms['page_content'] ?>
+                                                </td>
+                                                <td><a href="<?php echo base_url(); ?>admin/menu_setup/testurl">Test</a></td>
                                             </tr>
-                                                                                        <tr>
-                                                <td><i class="fa fa-envelope"></i>&nbsp;fa fa-envelope</td>
-                                                <td>Email</td>
-                                                <td>http://sumitmaharjan.com.np</td>
-                                                <td class="text-right">
-                                                    <a data-id_hlm="17" data-icon_class="fa fa-envelope" data-hl_menu_title="Email" data-hl_menu_link="http://sumitmaharjan.com.np" class="btn btn-warning edit_hlm" href="admin/header_setup/edit_header_left_menu/17" data-toggle="modal" data-target="#edithlm">Edit</a>&nbsp;&nbsp;
-                                                    <a class="btn btn-danger" href="http://[::1]/webadmin/admin/header_setup/delete_left_menu/17" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
-                                            </tr>
-                                                                                    </tbody></table>
+                                            <?php endforeach; ?>        
+                                            </tbody></table>
                                     </div>                                    
                                 </div>
                             </div>
@@ -49,19 +42,21 @@
 
 
 <!-- Modal -->
-<form id="addMenu">
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Add Menu</h4>
+        <h4 class="modal-title" id="myModalLabel"><?php echo $title; ?></h4>
+        <?php echo validation_errors(); ?>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
+      <?php echo form_open_multipart('admin/menu_setup/add'); ?>  
       <div class="modal-body">
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Name:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="menuname" placeholder="Menu Name">
+                    <input type="text" class="form-control" value="" required="" name="menu_name" placeholder="Menu Name">
                 </div>               
             </div>
 
@@ -77,7 +72,7 @@
                 </div>               
             </div>
 <script>
-    $( document ).ready(function() {
+ /*   $( document ).ready(function() {
     $(".hidden_field").hide();
     $( "#is_inner_Page" ).change(function(){
   
@@ -88,17 +83,15 @@
     else{
         $(".hidden_field").hide();
     }
-});
-
-    
+});   
    
-    });
+    });*/
 </script>
 
             <div class="form-group row hidden_field">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">External  Url:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="exturl" placeholder="http://www.example.com">
+                    <input type="text" class="form-control" value="" required="" name="ext_url" placeholder="http://www.example.com">
                 </div>               
             </div>
 
@@ -106,31 +99,32 @@
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Order:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="menuorder" placeholder="Menu Name">
+                    <input type="text" class="form-control" value="" required="" name="menu_order" placeholder="Menu Name">
                 </div>               
             </div>
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Page Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="pagetitle" placeholder="Menu Name">
+                    <input type="text" class="form-control" value="" required="" name="page_title" placeholder="Menu Name">
                 </div>               
             </div> 
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Page Content:</label>
                 <div class="col-sm-9">
-                    <textarea  class="form-control ckeditor" value="" required="" name="pagecontent" ></textarea>
+                    <textarea  class="form-control ckeditor" value="" required="" name="page_content" ></textarea>
                 </div>               
             </div>
-            
-            
+         <!--     <input type="hidden" name="page_id" value="<?php echo $mid; ?>" />  
+             -->
 
 
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+      <?php echo form_close();?>
     </div>
   </div>
 </div>
-</form>
