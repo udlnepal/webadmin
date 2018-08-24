@@ -43,17 +43,23 @@ class Menu_setup_model extends CI_Model {
 
     public function get_page_content(){
 
-    	$this->db->select('page_title');
+    	$this->db->select('*');
     	$this->db->from('menu_setup');
-    	$this->db->where('slug',$this->uri->segment(4));
-		$query=$this->db->get()->row();
-		$data=$query->page_title;
-		print_r($data); exit;
+    	$this->db->where('slug',$this->uri->segment(3));
+		$query=$this->db->get();
+		//print_r($query);
+     return $query->result_array();
+    // print_r($data);
+     //return $data;
+    // print_r($data); exit;
+      //  print_r($data);
+        //$data=$query->page_title;
+		//print_r($data); exit;
 	//	return $data;
 	//	print_r ($query);
 		/*$test=$this->uri->segment(4);
 		echo $test;*/
-		exit;
+		//exit;
     	}
        
 

@@ -12,8 +12,10 @@ public function index()
 	}
 
 public function page(){
-	
+	 	$data['menu_setup']=$this->menu_setup_model->get_page_content();
+	//	print_r($data); exit;
 		$this->display('site/page',$data);		
+
 
 
 }
