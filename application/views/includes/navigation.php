@@ -45,14 +45,17 @@
 				<a href=""><i class="fa fa-shopping-cart"></i></a>
 			</div> -->
 			<ul class="main-menu">
-				<li class="active"><a href="index.html">Home</a></li>
-				<li><a href="#">About PU</a></li>
+				<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
+				<!-- <li><a href="#">About PU</a></li>
 				<li><a href="#">Event</a></li>
 				<li><a href="#">ACADEMIC PROGRAMS</a></li>
 				<li><a href="#">COLLEGES</a></li>
 				<li><a href="#">CONTACT</a></li>
 				<li><a href="#">GALLERY</a></li>
-				<li><a href="#">EXAM SECTION</a></li>
+				<li><a href="#">EXAM SECTION</a></li> -->
+				<?php foreach($menu_setup as $mn_st): ?>
+					<li><a href="<?php echo base_url();?>site/page/<?php echo $mn_st['slug'];?>"><?php echo $mn_st['menu_name']; ?></a></li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 	</nav>
