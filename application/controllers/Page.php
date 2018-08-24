@@ -14,6 +14,11 @@ class page extends Frontend_controller{
         $this->display('page/'.$page,$data);
 
     }
+
+    public function testurl(){
+    //echo "iamhere"; exit;
+    $this->menu_setup_model->get_page_content();
+}
     
 }
 ?>
