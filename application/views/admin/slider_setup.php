@@ -142,7 +142,7 @@
             $(".modal-body .form-group #icon_class").val(icon_class);
             $(".modal-body .form-group #hl_menu_title").val(hl_menu_title);
             $(".modal-body .form-group #hl_menu_link").val(hl_menu_link);
-            $(".modal form").attr('action','admin/slider_setup/edit/'+ss_id);            
+            $(".edit_Slider_save form").attr('action','slider_setup/edit/'+ss_id);            
             $('#edithlm').modal('show');
             
         });
@@ -152,7 +152,7 @@
 
 <!--Edit Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-lg edit_Slider_save" role="document">
     <?php echo form_open('admin/slider_setup/edit/'.$sls['ss_id']); ?>
     <div class="modal-content">
       <div class="modal-header">
@@ -208,7 +208,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary ">Save changes</button>
       </div>
  <?php echo form_close(); ?>
 
