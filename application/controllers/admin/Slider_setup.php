@@ -28,7 +28,7 @@ class Slider_setup extends Admin_controller {
 
                         $error = array('error' => $this->upload->display_errors());
 
-                        redirect('slider_setup', $error);
+                        redirect('admin/slider_setup', $error);
 
                 }
                 else
@@ -56,9 +56,9 @@ class Slider_setup extends Admin_controller {
 
   
 
-     //   $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
-        $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
-    echo '<pre>',print_r($data[0]),'</pre>';exit;
+       $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
+    $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
+    
 /*        $this->form_validation->set_rules('slider_img_name');
         $this->form_validation->set_rules('primary_slider_title');
         $this->form_validation->set_rules('sec_slider_title');
@@ -75,9 +75,11 @@ class Slider_setup extends Admin_controller {
         {*/
         
            // echo "i four"; exit;
-            $this->slider_setup_model->set_slider_name($ss_id,$slider_img_name);
-            $this->load->view('admin/slider_setup');
-            redirect( base_url() . 'slider_setup');
+            $this->slider_setup_model->set_slider_name($ss_id,'test.jpg');
+           // $this->do_upload();
+       //     $this->load->view('admin/slider_setup');
+            //redirect( base_url() . 'slider_setup');
+            redirect('admin/slider_setup');
    //    }
 
 

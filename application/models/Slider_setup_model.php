@@ -29,8 +29,8 @@ class Slider_setup_model extends CI_Model {
         	return $this->db->insert('slider_setup',$data);
         
         } else{
- 
-        $this->db->where('ss_id'.$ss_id);
+ //print_r ($ss_id); exit;
+        $this->db->where('ss_id',$ss_id);
         return $this->db->update('slider_setup',$data);
     }
  
