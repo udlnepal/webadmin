@@ -54,35 +54,13 @@ class Slider_setup extends Admin_controller {
          $this->load->helper('form');
         $this->load->library('form_validation');
 
-  
-
-       $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
+    $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
+    $titlename=$data['sls']['slider_img_name'];
     $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
-    
-/*        $this->form_validation->set_rules('slider_img_name');
-        $this->form_validation->set_rules('primary_slider_title');
-        $this->form_validation->set_rules('sec_slider_title');
-        $this->form_validation->set_rules('slider_text');
-        $this->form_validation->set_rules('slider_btn_text');
-        $this->form_validation->set_rules('slider_btn_link');
-        if ($this->form_validation->run() === FALSE)
-        {
-     
-            redirect('slider_setup',$data);
+
+            $this->slider_setup_model->set_slider_name($ss_id,$titlename);
  
-        }
-        else
-        {*/
-        
-           // echo "i four"; exit;
-            $this->slider_setup_model->set_slider_name($ss_id,'test.jpg');
-           // $this->do_upload();
-       //     $this->load->view('admin/slider_setup');
-            //redirect( base_url() . 'slider_setup');
             redirect('admin/slider_setup');
-   //    }
-
-
          }
 
 
