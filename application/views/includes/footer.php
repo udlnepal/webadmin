@@ -26,11 +26,30 @@
 					<h6 class="fw-title">USEFUL LINK</h6>
 					<div class="dobule-link">
 						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">About PU</a></li>
-							<li><a href="">Academic Programs</a></li>
-							<li><a href="">Events</a></li>
-							<li><a href="">Gallery</a></li>
+									<?php foreach($menu_setup as $key=>$mn_st): ?>
+					<li><a href="<?php 
+
+					if ($mn_st['is_inner_page']=="yes"){
+					echo base_url('site/page/');?><?php echo $mn_st['slug'];
+					
+					}
+					elseif($mn_st['is_inner_page']=="no"){
+						echo base_url();echo"#";echo $mn_st['slug'];
+					}
+					else{
+						
+						echo $mn_st['ext_url'];
+					}
+
+					?>"
+
+					<?php 
+						if($mn_st['is_inner_page']=="ext"){
+							echo "target=\"_blank\"";
+						}
+					?>	
+					><?php echo $mn_st['menu_name']; ?></a></li>
+				<?php endforeach; ?>
 						</ul>
 						<ul>
 							<li><a href="">Policy</a></li>
