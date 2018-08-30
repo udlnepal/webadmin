@@ -153,7 +153,7 @@
 <!--Edit Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg edit_Slider_save" role="document">
-    <?php echo form_open('admin/slider_setup/edit/'.$sls['ss_id']); ?>
+    <?php echo form_open_multipart('admin/slider_setup/edit/'.$sls['ss_id']); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Edit Slider</h4>

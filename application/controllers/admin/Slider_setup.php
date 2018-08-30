@@ -1,4 +1,4 @@
-<?php
+ <?php
 include_once(APPPATH.'controllers/Admin_controller.php');
 class Slider_setup extends Admin_controller {
 
@@ -16,9 +16,11 @@ class Slider_setup extends Admin_controller {
       public function do_upload()
         {
 
+
                 $config['upload_path']          = './assets/img/hero-slider';
                 $config['allowed_types']        = 'jpg|jpeg';
                 $config['file_name']='0';
+
 
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
@@ -27,15 +29,48 @@ class Slider_setup extends Admin_controller {
                 {
 
                         $error = array('error' => $this->upload->display_errors());
-
+                   //   echo "i am still here"; exit;
                         redirect('admin/slider_setup', $error);
 
                 }
                 else
                 {
-                	
+
+//$this->uri->segment(4) === FALSE;
+$test = $this->uri->segment(4);
+//echo $test; exit;
+if($test==0)
+                    {
+                        $ss_id=0;
+                      // echo " i am here from add"; exit;
+                    }
+                else {
+                    //echo "i am here from edit"; exit;
+                   $ss_id = $this->uri->segment(4);
+                    
+                  //  echo "i am here from edit";exit;
+
+                }
+
+
+                //    echo $this->uri->segmet(4); exit;
+                   // echo isset($ss_id); exit;
+                	//$ss_id = $this->uri->segmet(4);
+                  /* if(!isset())
+                    {
+                        $ss_id=0;
+                       echo " i am here from add"; exit;
+                    }
+                else {
+                    echo "i am here from edit"; exit;
+                    $ss_id=$this->uri->segmet(4);
+                  //  echo "i am here from edit";exit;
+
+                }*/
+
+
                         $data = array('upload_data' => $this->upload->data());                       
-                       	$this->slider_setup_model->set_slider_name($ss_id = 0,$data['upload_data']['file_name']);
+                       	$this->slider_setup_model->set_slider_name($ss_id,$data['upload_data']['file_name']);
                         redirect('admin/slider_setup',$data);
 
                 }
@@ -43,7 +78,7 @@ class Slider_setup extends Admin_controller {
 
 
          public function edit(){
-           
+            $this->do_upload();
         $ss_id = $this->uri->segment(4);
         
         if (empty($ss_id))
@@ -57,9 +92,9 @@ class Slider_setup extends Admin_controller {
     $data['sls'] = $this->slider_setup_model->get_slider_image_byid($ss_id);
     $titlename=$data['sls']['slider_img_name'];
     $data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
+//echo "i reached here"; exit;
+           // $this->slider_setup_model->set_slider_name($ss_id,$titlename);
 
-            $this->slider_setup_model->set_slider_name($ss_id,$titlename);
- 
             redirect('admin/slider_setup');
          }
 
