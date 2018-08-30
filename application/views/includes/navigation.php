@@ -54,7 +54,28 @@
 				<li><a href="#">GALLERY</a></li>
 				<li><a href="#">EXAM SECTION</a></li> -->
 				<?php foreach($menu_setup as $mn_st): ?>
-					<li><a href="<?php echo base_url();?>site/page/<?php echo $mn_st['slug'];?>"><?php echo $mn_st['menu_name']; ?></a></li>
+					<li><a href="<?php 
+
+					if ($mn_st['is_inner_page']=="yes"){
+					echo base_url('site/page/');?><?php echo $mn_st['slug'];
+					
+					}
+					elseif($mn_st['is_inner_page']=="no"){
+						echo base_url();echo"#";echo $mn_st['slug'];
+					}
+					else{
+						
+						echo $mn_st['ext_url'];
+					}
+
+					?>"
+
+					<?php 
+						if($mn_st['is_inner_page']=="ext"){
+							echo "target=\"_blank\"";
+						}
+					?>	
+					><?php echo $mn_st['menu_name']; ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
