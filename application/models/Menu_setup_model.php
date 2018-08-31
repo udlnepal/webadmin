@@ -34,7 +34,10 @@ class Menu_setup_model extends CI_Model {
     }
 
     public function get_menu(){
-    	$query=$this->db->get_where('menu_setup');
+    	$this->db->select('*');
+        $this->db->from('menu_setup');
+        $this->db->order_by("menu_order", "asc");
+        $query=$this->db->get(); 
     	return $query->result_array();
 
     }
