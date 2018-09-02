@@ -58,6 +58,7 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
+    <?php echo form_open('admin/category_setup/add'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
@@ -67,7 +68,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-        
+        <div class="col-lg-12">
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Title:</label>
                 <div class="col-sm-9">
@@ -86,13 +87,15 @@
                     <input type="text" class="form-control" value="" required="" name="c_order" placeholder="Category Order">
                 </div>               
         </div>
-
+    </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
+  <?php echo form_close(); ?>
   </div>
+
 </div>

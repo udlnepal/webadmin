@@ -25,6 +25,22 @@ class Category_setup extends Admin_controller{
 		$this->load->view('templates/footer');
 	}
 
+	public function add(){
+		$data['title']='Add Category';
+		$this->form_validation->set_rules('c_title','Category Title','required');
+		$this->form_validation->set_rules('c_shortdesc','Category Description','required');
+		$this->form_validation->set_rules('c_order','Category Order','required');
+	if($this->form_validation->run()== FALSE){
+		redirect('admin/category_setup',$data);
+	}
+	else{
+		$this->category_setup_model->set_category();
+		redirect('admin/category_setup',$data);
+	}
+
+	}
+	
+
 
 /* write above here */
 }
