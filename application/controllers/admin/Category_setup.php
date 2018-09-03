@@ -18,6 +18,7 @@ class Category_setup extends Admin_controller{
 
 	public function index(){
 		 $data['titlename']=$this->admin_model->get_logged_user();
+		 $data['category_setup']=$this->category_setup_model->get_category();
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/headernav');
 		$this->load->view('templates/sidebar');

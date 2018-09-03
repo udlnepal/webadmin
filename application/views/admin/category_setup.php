@@ -45,7 +45,11 @@
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
                                                 <tr><th width="10%">Order</th><th width="25%">Category</th><th width="45%">Short Description</th><th width="15%">Action</th></tr>
-                                                <tr><td>1</td><td>Events</td><td></td><td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td></tr>
+                                                
+                                                    <?php foreach($category_setup as $key=>$cs): ?>
+                                                <tr><td><?php echo $cs['c_order'] ?></td><td><?php echo $cs['c_title'] ?></td><td><?php echo $cs['c_shortdesc'] ?></td><td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td></tr>
+                                                    <?php endforeach; ?>
+
                                             </table>
                                         </div>
                                     </div>
@@ -57,7 +61,7 @@
 
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <?php echo form_open('admin/category_setup/add'); ?>
     <div class="modal-content">
       <div class="modal-header">
@@ -69,6 +73,17 @@
       <div class="modal-body">
         <div class="row">
         <div class="col-lg-12">
+               <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Order:</label>
+                <div class="col-sm-9">
+                    <select name="c_order" class="form-control">
+                        <option value="1">First</option>
+                        <option value="2">Second</option>
+                        <option value="3">Third</option>
+                        <option value="4">Fourth</option>
+                    </select>
+                </div> 
+                </div>
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Title:</label>
                 <div class="col-sm-9">
@@ -81,12 +96,8 @@
                     <input type="text" class="form-control" value="" required="" name="c_shortdesc" placeholder="Category Short Description">
                 </div>               
         </div>
-         <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Order:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="c_order" placeholder="Category Order">
-                </div>               
-        </div>
+                    
+        
     </div>
         </div>
       </div>

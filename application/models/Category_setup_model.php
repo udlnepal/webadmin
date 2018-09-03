@@ -21,6 +21,15 @@ public function set_category($cat_setup_id=0){
 		return $this->db->update('category_setup',$data);
 	}
 }
+
+
+public function get_category(){
+$query=$this->db->get_where('category_setup');
+return $query->result_array();
+}
+
+
+
 /*write above here*/
 }
 ?>

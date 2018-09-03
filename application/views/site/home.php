@@ -340,7 +340,11 @@
 
 
 	<!-- Gallery section -->
-	<div class="gallery-section">
+	<section class="gallery-section">
+		<div class="section-title text-center">
+				<h3>Gallery</h3>
+				<p>Some of the Pictrues</p>
+			</div>
 		<div class="gallery">
 			<div class="grid-sizer"></div>
 			<div class="gallery-item gi-big set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/1.jpg">
@@ -368,7 +372,7 @@
 				<a class="img-popup" href="<?php echo base_url(); ?>assets/img/gallery/7.jpg"><i class="ti-plus"></i></a>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Gallery section -->
 
 
