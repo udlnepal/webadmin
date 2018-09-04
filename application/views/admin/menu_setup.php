@@ -72,8 +72,9 @@
                 </div>               
             </div>
 <script>
- /*   $( document ).ready(function() {
+   $( document ).ready(function() {
     $(".hidden_field").hide();
+    $(".hidden_field2").hide();
     $( "#is_inner_Page" ).change(function(){
   
   var test=$("#is_inner_Page option:selected").val();
@@ -83,15 +84,31 @@
     else{
         $(".hidden_field").hide();
     }
+     if(test=="no"){
+        $(".hidden_field2").show();
+    }
+    else{
+        $(".hidden_field2").hide();
+    }
 });   
    
-    });*/
+    });
 </script>
 
             <div class="form-group row hidden_field">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">External  Url:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="ext_url" placeholder="http://www.example.com">
+                    <input type="text" class="form-control" value=""
+                     name="ext_url" placeholder="http://www.example.com">
+                </div>               
+            </div>
+
+             <div class="form-group row hidden_field2">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
+                <div class="col-sm-9">
+                    <select class="form-control">
+                        <option>CAtegory 1</option>
+                    </select>
                 </div>               
             </div>
 

@@ -47,7 +47,7 @@
                                                 <tr><th width="10%">Order</th><th width="25%">Category</th><th width="45%">Short Description</th><th width="15%">Action</th></tr>
                                                 
                                                     <?php foreach($category_setup as $key=>$cs): ?>
-                                                <tr><td><?php echo $cs['c_order'] ?></td><td><?php echo $cs['c_title'] ?></td><td><?php echo $cs['c_shortdesc'] ?></td><td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td></tr>
+                                                <tr><td><?php echo $cs['c_order'] ?></td><td><?php echo $cs['c_title'] ?></td><td><?php echo $cs['c_shortdesc'] ?></td><td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/category_setup/delete_cat/'.$cs['cat_setup_id']);?> ">Delete</a></td></tr>
                                                     <?php endforeach; ?>
 
                                             </table>
@@ -77,10 +77,22 @@
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Order:</label>
                 <div class="col-sm-9">
                     <select name="c_order" class="form-control">
+                       <!-- <?php foreach($category_setup as $key=>$cs): ?>
+                        <option>
+                        <?php 
+                            echo $cs['c_order']; ?>
+
+
+                 </option>
+                  <?php  endforeach;
+                         ?> -->
                         <option value="1">First</option>
                         <option value="2">Second</option>
                         <option value="3">Third</option>
                         <option value="4">Fourth</option>
+                         <option value="5">Fifth</option>
+                          <option value="6">Sixth</option>
+                           <option value="7">Seventh</option>
                     </select>
                 </div> 
                 </div>

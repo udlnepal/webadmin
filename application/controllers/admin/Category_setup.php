@@ -31,6 +31,7 @@ class Category_setup extends Admin_controller{
 		$this->form_validation->set_rules('c_title','Category Title','required');
 		$this->form_validation->set_rules('c_shortdesc','Category Description','required');
 		$this->form_validation->set_rules('c_order','Category Order','required');
+
 	if($this->form_validation->run()== FALSE){
 		redirect('admin/category_setup',$data);
 	}
@@ -39,6 +40,15 @@ class Category_setup extends Admin_controller{
 		redirect('admin/category_setup',$data);
 	}
 
+	}
+
+	public function delete_cat(){
+		$cat_setup_id=$this->uri->segment(4);
+		if(empty($cat_setup_id)){
+			show_404();
+		}
+		$this->category_setup_model->delete_category($cat_setup_id);
+		redirect(base_url().'admin/category_setup');
 	}
 	
 

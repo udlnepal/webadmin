@@ -9,6 +9,7 @@ class Frontend_controller extends CI_Controller {
        $this->load->model('header_setup_model');
        $this->load->model('slider_setup_model');
         $this->load->model('menu_setup_model');
+         $this->load->model('category_setup_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
     

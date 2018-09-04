@@ -16,9 +16,13 @@ public function set_category($cat_setup_id=0){
 	);
 	if($cat_setup_id==0){
 		return $this->db->insert('category_setup',$data);
+		/* $error = $this->db->error();
+		 echo "<h4>".$error."</h4>";exit;*/
+
 	}else{
 		$this->db->where('cat_setup_id',$cat_setup_id);
 		return $this->db->update('category_setup',$data);
+
 	}
 }
 
@@ -28,6 +32,11 @@ $query=$this->db->get_where('category_setup');
 return $query->result_array();
 }
 
+
+public function delete_category($cat_setup_id){
+	$this->db->where('cat_setup_id',$cat_setup_id);
+	return $this->db->delete('category_setup');
+}
 
 
 /*write above here*/

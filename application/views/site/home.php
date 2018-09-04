@@ -55,8 +55,11 @@
 	<section class="service-section spad">
 		<div class="container services">
 			<div class="section-title text-center">
-				<h3>OUR FEATURES</h3>
-				<p>We provides the opportunity to prepare for life</p>
+			<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==1){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 service-item">
@@ -125,8 +128,11 @@
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="section-title text-white">
-						<h3>ENROLLMENT</h3>
-						<p>Get started with us to explore the exciting</p>
+							<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==2){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 					</div>
 					<div class="enroll-list text-white">
 						<div class="enroll-list-item">
@@ -159,8 +165,11 @@
 	<section class="courses-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>ACADEMIC PROGRAMS</h3>
-				<p>Building a better world, one course at a time</p>
+					<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==3){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 			</div>
 			<div class="row">
 				<!-- course item -->
@@ -303,8 +312,11 @@
 	<section class="event-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>OUR EVENTS</h3>
-				<p>Our department  initiated a series of events</p>
+					<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==4){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 			</div>
 			<div class="row">
 				<div class="col-md-6 event-item">
@@ -342,8 +354,11 @@
 	<!-- Gallery section -->
 	<section class="gallery-section">
 		<div class="section-title text-center">
-				<h3>Gallery</h3>
-				<p>Some of the Pictrues</p>
+					<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==5){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 			</div>
 		<div class="gallery">
 			<div class="grid-sizer"></div>
@@ -380,8 +395,11 @@
 	<section class="blog-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>LATEST NEWS</h3>
-				<p>Get latest breaking news & top stories today</p>
+					<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==6){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 			</div>
 			<div class="row">
 				<div class="col-xl-6">
@@ -448,8 +466,11 @@
 			<div class="row">
 				<div class="col-md-5 col-lg-7">
 					<div class="section-title mb-md-0">
-					<h3>NEWSLETTER</h3>
-					<p>Subscribe and get the latest news and useful tips, advice and best offer.</p>
+						<?php foreach($category_setup as $key=>$cs):?>	
+				<?php if($cs['c_order']==7){ ?>
+				<h3><?php echo $cs['c_title'];  ?></h3>
+				<p><?php echo $cs['c_shortdesc']; }?></p>
+			<?php endforeach; ?>
 				</div>
 				</div>
 				<div class="col-md-7 col-lg-5">
