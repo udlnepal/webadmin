@@ -62,10 +62,10 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open('admin/category_setup/add'); ?>
+    <?php echo form_open('admin/content_setup/add'); ?>
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -74,25 +74,25 @@
         <div class="row">
         <div class="col-lg-12">
                <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Order:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
-                    <select name="c_order" class="form-control">
-                       <!-- <?php foreach($category_setup as $key=>$cs): ?>
+                    <select name="c_title" class="form-control">
+                        <?php foreach($category_setup as $key=>$cs): ?>
                         <option>
                         <?php 
-                            echo $cs['c_order']; ?>
+                            echo $cs['c_title']; ?>
 
 
                  </option>
                   <?php  endforeach;
-                         ?> -->
-                        <option value="1">First</option>
+                         ?>
+                    <!--     <option value="1">First</option>
                         <option value="2">Second</option>
                         <option value="3">Third</option>
                         <option value="4">Fourth</option>
                          <option value="5">Fifth</option>
                           <option value="6">Sixth</option>
-                           <option value="7">Seventh</option>
+                           <option value="7">Seventh</option> -->
                     </select>
                 </div> 
                 </div>
@@ -103,11 +103,38 @@
                 </div>               
         </div>
          <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Description:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="c_shortdesc" placeholder="Category Short Description">
+                    <input type="text" class="form-control" value="" required="" name="h_title" placeholder="Content Title">
                 </div>               
         </div>
+        <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Description:</label>
+                <div class="col-sm-9">
+                    <textarea name=""type="text" class="form-control" value="" required="" name="h_description" placeholder="Content Description"></textarea>
+                </div>               
+        </div>
+        <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Author Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" value="" required="" name="h_author" placeholder="Author Name">
+                </div>               
+        </div>
+        <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Location:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" value="" required="" name="h_location" placeholder="Location">
+                </div>               
+        </div>
+         <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Date:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value=""  required=""  name="h_date" value="<?php echo date("Y-m-d H:i:s"); ?>" >
+                </div>               
+        </div>
+              
+              <input type="text" class="form-control" value=""  required=""  name="cat_id" style="visibility: hidden;" >
+              
                     
         
     </div>
