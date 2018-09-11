@@ -96,44 +96,41 @@
                     </select>
                 </div> 
                 </div>
-        <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Title:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="c_title" placeholder="Category Titlle">
-                </div>               
-        </div>
+     
          <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="h_title" placeholder="Content Title">
-                </div>               
+                    <input type="text" class="form-control" value=""  name="h_title" placeholder="Content Title">
+
+                </div> 
+                         
         </div>
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Description:</label>
                 <div class="col-sm-9">
-                    <textarea name=""type="text" class="form-control" value="" required="" name="h_description" placeholder="Content Description"></textarea>
+                    <textarea type="text" class="form-control" value=""  name="h_description" placeholder="Content Description"></textarea>
                 </div>               
         </div>
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Author Name:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="h_author" placeholder="Author Name">
+                    <input type="text" class="form-control" value=""  name="h_author" placeholder="Author Name">
                 </div>               
         </div>
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Location:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="h_location" placeholder="Location">
+                    <input type="text" class="form-control" value=""  name="h_location" placeholder="Location">
                 </div>               
         </div>
-         <div class="form-group row">
+        <!--  <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Date:</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" value=""  required=""  name="h_date" value="<?php echo date("Y-m-d H:i:s"); ?>" >
+                  <input type="text" class="form-control" value=""   name="h_date" value="<?php echo date("Y-m-d H:i:s"); ?>" >
                 </div>               
-        </div>
+        </div> -->
               
-              <input type="text" class="form-control" value=""  required=""  name="cat_id" style="visibility: hidden;" >
+           <!--   <input type="text" class="form-control" value=""    name="cat_id" style="visibility: hidden;" > -->
               
                     
         
@@ -141,6 +138,7 @@
         </div>
       </div>
       <div class="modal-footer">
+      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
