@@ -47,6 +47,17 @@ public function add(){
 	
 
 }
+
+
+public function delete_cont(){
+		$home_cont_id=$this->uri->segment(4);
+		if(empty($home_cont_id)){
+			show_404();
+		}
+		$this->content_setup_model->delete_content($home_cont_id);
+		redirect(base_url().'admin/content_setup');
+	}
+
 /*write above here*/
 }
 ?>

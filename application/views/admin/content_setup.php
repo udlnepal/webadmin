@@ -52,7 +52,7 @@
                                                     <td><?php echo $cs['h_description'] ?></td>
                                                     <td><?php echo $cs['h_author'] ?></td>
                                                     <td class="text-right">
-                                                        <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="#">Delete</a>
+                                                        <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/content_setup/delete_cont/'.$cs['home_cont_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
                                                     </td>
                                                 </tr>
                                                     <?php endforeach; ?>

@@ -42,6 +42,11 @@ return $query->result_array();
 }
 
 
+public function delete_content($home_cont_id){
+	$this->db->where('home_cont_id',$home_cont_id);
+	return $this->db->delete('home_content');
+}
+
 /* write above here */
 }
 ?>
