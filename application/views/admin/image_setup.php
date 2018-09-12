@@ -62,7 +62,7 @@
 
 
     $(document).ready(function() {
-          console.log( "ready!" );
+        //  console.log( "ready!" );
 
         $('select[name="c_title"]').on('change', function() {
             var cont_id = $(this).val();
@@ -105,6 +105,7 @@
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
                     <select name="c_title" class="form-control category" required="" >
+                        <option>--select--</option>
                         <?php foreach($category_setup as $key=>$cs): ?>
                         <option value="<?php echo $cs['cat_setup_id'];?>">
                         <?php 
