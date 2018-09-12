@@ -8,6 +8,7 @@ public function index()
 		$data['slider_setup'] = $this->slider_setup_model->get_slider_image_name();
 		$data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
 		$data['category_setup']=$this->category_setup_model->get_category();
+		$data['home_content']=$this->content_setup_model->get_first_cont();
 		
 		//$data['menu_setup']=$this->menu_setup_model->get_page_content();
 		$this->display('site/home',$data);		

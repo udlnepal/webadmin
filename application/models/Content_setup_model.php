@@ -41,6 +41,13 @@ $query = $this->db->query('SELECT home_content.*, category_setup.c_title FROM ho
 return $query->result_array();
 }
 
+/* get first cat content */
+public function get_first_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=1');
+return $query->result_array();
+}
+
+
 
 public function delete_content($home_cont_id){
 	$this->db->where('home_cont_id',$home_cont_id);

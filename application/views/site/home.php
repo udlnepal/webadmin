@@ -62,7 +62,23 @@
 			<?php endforeach; ?>
 			</div>
 			<div class="row">
+
+				<?php foreach($home_content as $key=>$hc): ?>
 				<div class="col-lg-4 col-sm-6 service-item">
+					<div class="service-icon">
+						<img src="<?php echo base_url(); ?>assets/img/services-icons/<?php echo $key+1; ?>.png" alt="1">
+					</div>
+					<div class="service-content">
+						<h4><?php echo $hc['h_title'] ?></h4>
+						<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue. Aenean dos cursus lania.</p>
+					</div>
+				</div>
+
+				<?php endforeach; ?>
+
+
+
+			<!-- <div class="col-lg-4 col-sm-6 service-item">
 					<div class="service-icon">
 						<img src="<?php echo base_url(); ?>assets/img/services-icons/1.png" alt="1">
 					</div>
@@ -115,7 +131,7 @@
 						<h4>Chemistry Lab</h4>
 						<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue. Aenean dos cursus lania.</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
