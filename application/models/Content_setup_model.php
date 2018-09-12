@@ -34,6 +34,14 @@ return $this->db->update('home_cont_id',$data);
 
 }
 }	
+
+
+public function get_content(){
+$query = $this->db->query('SELECT home_content.*, category_setup.c_title FROM home_content JOIN category_setup ON home_content.cat_id=category_setup.cat_setup_id');
+return $query->result_array();
+}
+
+
 /* write above here */
 }
 ?>

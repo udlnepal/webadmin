@@ -44,10 +44,17 @@
                                         <div class="col-lg-12 text-right"><button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Add New</button></div>
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
-                                                <tr><th width="10%">Order</th><th width="25%">Category</th><th width="45%">Short Description</th><th width="15%">Action</th></tr>
+                                                <tr><th width="10%">Category</th><th width="25%">Content Title</th><th width="30%">Content Description</th><th width="15%">Author Name</th><th width="15%">Action</th></tr>
                                                 
-                                                    <?php foreach($category_setup as $key=>$cs): ?>
-                                                <tr><td><?php echo $cs['c_order'] ?></td><td><?php echo $cs['c_title'] ?></td><td><?php echo $cs['c_shortdesc'] ?></td><td class="text-right"><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/category_setup/delete_cat/'.$cs['cat_setup_id']);?> ">Delete</a></td></tr>
+                                                    <?php foreach($home_content as $key=>$cs): ?>
+                                                <tr><td><?php echo $cs['c_title'] ?></td>
+                                                    <td><?php echo $cs['h_title'] ?></td>
+                                                    <td><?php echo $cs['h_description'] ?></td>
+                                                    <td><?php echo $cs['h_author'] ?></td>
+                                                    <td class="text-right">
+                                                        <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="#">Delete</a>
+                                                    </td>
+                                                </tr>
                                                     <?php endforeach; ?>
 
                                             </table>

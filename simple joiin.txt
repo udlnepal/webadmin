@@ -1,0 +1,7 @@
+SELECT h_title FROM home_content join category_setup on cat_setup_id= cat_id WHERE cat_setup_id=8
+
+
+
+
+SELECT home_content.*, category_setup.c_title FROM home_content JOIN category_setup ON home_content.cat_id=category_setup.cat_setup_id
+
