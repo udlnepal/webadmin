@@ -10,7 +10,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="admin">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Content Setup</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Image Setup</li>
                                 </ol>
                             </nav>
                         </div>
@@ -37,26 +37,18 @@
                             <div class="card-body">
                                 <div class="col-lg-12">
                                     
-                                        <h4 class="card-title">Content Setup</h4>
+                                        <h4 class="card-title">Image Setup</h4>
                                    
                                     <div class="clearfix"></div>
                                     <div class="row">
                                         <div class="col-lg-12 text-right"><button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Add New</button></div>
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
-                                                <tr><th width="10%">Category</th><th width="25%">Content Title</th><th width="30%">Content Description</th><th width="15%">Author Name</th><th width="15%">Action</th></tr>
+                                                <tr>
+                                              <th width="10%">Image</th>
+                                              <th width="25%">Category</th><th width="30%">Content </th><th width="15%">Action</th></tr>
                                                 
-                                                    <?php foreach($home_content as $key=>$cs): ?>
-                                                <tr><td><?php echo $cs['c_title'] ?></td>
-                                                    <td><?php echo $cs['h_title'] ?></td>
-                                                    <td><?php echo $cs['h_description'] ?></td>
-                                                    <td><?php echo $cs['h_author'] ?></td>
-                                                    <td class="text-right">
-                                                        <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/content_setup/delete_cont/'.$cs['home_cont_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
-                                                    </td>
-                                                </tr>
-                                                    <?php endforeach; ?>
-
+                                                  
                                             </table>
                                         </div>
                                     </div>
@@ -65,6 +57,35 @@
                     </div>
                 </div>
             </div>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function() {
+          console.log( "ready!" );
+
+        $('select[name="c_title"]').on('change', function() {
+            var cont_id = $(this).val();
+            if(cont_id) {
+                $.ajax({
+                 
+                    url: '<?php echo base_url('admin/image_setup'); ?>/myformAjax/'+cont_id,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        $('select[name="content"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="content"]').append('<option value="'+ value.home_cont_id +'">'+ value.h_title +'</option>');
+                        });
+                    }
+                });
+            }else{
+                $('select[name="content"]').empty();
+            }
+        });
+    });
+</script>
+
 
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -83,9 +104,9 @@
                <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
-                    <select name="c_title" class="form-control" required="">
+                    <select name="c_title" class="form-control category" required="" >
                         <?php foreach($category_setup as $key=>$cs): ?>
-                        <option>
+                        <option value="<?php echo $cs['cat_setup_id'];?>">
                         <?php 
                             echo $cs['c_title']; ?>
 
@@ -93,51 +114,30 @@
                  </option>
                   <?php  endforeach;
                          ?>
-                    <!--     <option value="1">First</option>
-                        <option value="2">Second</option>
-                        <option value="3">Third</option>
-                        <option value="4">Fourth</option>
-                         <option value="5">Fifth</option>
-                          <option value="6">Sixth</option>
-                           <option value="7">Seventh</option> -->
+                    
                     </select>
                 </div> 
                 </div>
      
          <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Title:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Content:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value=""  name="h_title" required="" placeholder="Content Title">
+                    <select class="form-control content" name="content">
+                    	
+                    </select>
 
                 </div> 
                          
         </div>
+        
+        
         <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content Description:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Image:</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" value="" required=""  name="h_description" placeholder="Content Description"></textarea>
+                    <input type="file" class="form-control" value=""  name="h_location" placeholder="Location">
                 </div>               
         </div>
-        <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Author Name:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value=""   name="h_author" placeholder="Author Name">
-                </div>               
-        </div>
-        <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Location:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value=""  name="h_location" placeholder="Location">
-                </div>               
-        </div>
-         <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Date:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control"   name="h_date" value="<?php echo date("Y-m-d H:i:s"); ?>" >
-                </div>               
-        </div>
-              
-           <!--   <input type="text" class="form-control" value=""    name="cat_id" style="visibility: hidden;" > -->
+         
               
                     
         
