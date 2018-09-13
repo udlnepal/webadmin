@@ -47,8 +47,9 @@
                                                 <tr>
                                               <th width="10%">Image</th>
                                               <th width="25%">Category</th><th width="30%">Content </th><th width="15%">Action</th></tr>
-                                                
-                                                  
+                                              <?php foreach($home_image_setup as $his): ?>
+                                              <tr><td><img src="<?php echo base_url('assets/img/media/'); ?><?php echo $his['cimage_name']; ?>" style="height:60px; width: 120px;"></td><td><?php echo $his['c_title']; ?></td><td><?php echo $his['h_title']; ?></td><td></td></tr>  
+                                               <?php endforeach; ?>   
                                             </table>
                                         </div>
                                     </div>
@@ -90,7 +91,7 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open('admin/content_setup/add'); ?>
+    <?php echo form_open_multipart('admin/image_setup/do_upload'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
@@ -135,7 +136,7 @@
         <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Image:</label>
                 <div class="col-sm-9">
-                    <input type="file" class="form-control" value=""  name="h_location" placeholder="Location">
+                    <input type="file" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
                 </div>               
         </div>
          
