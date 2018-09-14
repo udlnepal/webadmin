@@ -16,6 +16,7 @@ $this->load->library(array('session','form_validation'));
 
 public function index(){
 	$data['category_setup']=$this->category_setup_model->get_category();
+    $data['header_title_setup'] = $this->header_setup_model->get_header_title();
     $data['home_image_setup']=$this->image_setup_model->get_home_image_name();
     $data['titlename']=$this->admin_model->get_logged_user();
 		$this->load->view('templates/header');
@@ -76,6 +77,20 @@ if($test==0)
        $result = $this->db->where("cat_id",$cont_id)->get("home_content")->result();
        echo json_encode($result);
    }
+
+public function delete_img(){
+    $hi_id=$this->uri->segment(4);
+    if(empty($hi_id)){
+        show_404();
+    }
+    $this->image_setup_model->delete_image($hi_id);
+    redirect(base_url('admin/image_setup'));
+
+}
+
+
+
+
 /* write above here */
 }
 ?>

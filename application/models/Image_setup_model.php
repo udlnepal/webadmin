@@ -43,6 +43,14 @@ class Image_setup_model extends CI_Model {
     	return $query->result_array();
 
     }
+
+public function delete_image($hi_id){
+    $this->db->where('hi_id',$hi_id);
+    return $this->db->delete('home_image_setup');
+}
+
+
+
 /*write above here */
  }
  ?>

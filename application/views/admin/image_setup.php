@@ -52,7 +52,7 @@
 
                                                 <td>
                                                     
-                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger"  onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/image_setup/delete_img/'.$his['hi_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
 
                                                 </td>
 
