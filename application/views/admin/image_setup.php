@@ -48,7 +48,15 @@
                                               <th width="10%">Image</th>
                                               <th width="25%">Category</th><th width="30%">Content </th><th width="15%">Action</th></tr>
                                               <?php foreach($home_image_setup as $his): ?>
-                                              <tr><td><img src="<?php echo base_url('assets/img/media/'); ?><?php echo $his['cimage_name']; ?>" style="height:60px; width: 120px;"></td><td><?php echo $his['c_title']; ?></td><td><?php echo $his['h_title']; ?></td><td></td></tr>  
+                                              <tr><td><img src="<?php echo base_url('assets/img/media/'); ?><?php echo $his['cimage_name']; ?>" style="height:60px; width: 120px;"></td><td><?php echo $his['c_title']; ?></td><td><?php echo $his['h_title']; ?></td>
+
+                                                <td>
+                                                    
+                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger"  onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+
+                                                </td>
+
+                                            </tr>  
                                                <?php endforeach; ?>   
                                             </table>
                                         </div>

@@ -38,7 +38,7 @@ class Image_setup_model extends CI_Model {
  }
 
  public function get_home_image_name(){
-    	$query=$this->db->query("SELECT home_content.h_title, category_setup.c_title, home_image_setup.cimage_name FROM home_content JOIN category_setup ON home_content.cat_id=category_setup.cat_setup_id JOIN home_image_setup on home_image_setup.cont_id=home_content.home_cont_id");
+    	$query=$this->db->query("SELECT home_content.h_title, category_setup.c_title, home_image_setup.* FROM home_content JOIN category_setup ON home_content.cat_id=category_setup.cat_setup_id JOIN home_image_setup on home_image_setup.cont_id=home_content.home_cont_id");
     	//print_r($query->result_array());die;
     	return $query->result_array();
 
