@@ -367,6 +367,18 @@
 	<!-- Event section end -->
 
 
+<!-- 
+0=gi-big
+1=
+2
+3=gi-long
+4=gi-big
+5=gi-long
+6=
+7=
+-->
+
+
 	<!-- Gallery section -->
 	<section class="gallery-section">
 		<div class="section-title text-center">
@@ -378,10 +390,40 @@
 			</div>
 		<div class="gallery">
 			<div class="grid-sizer"></div>
-			<div class="gallery-item gi-big set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/1.jpg">
-				<a class="img-popup" href="<?php echo base_url(); ?>assets/img/gallery/1.jpg"><i class="ti-plus"></i></a>
+			
+			<?php foreach($home_image_setup as $key=>$his): ?>
+			<div class="gallery-item
+
+<?php 
+
+switch ($key) {
+    case 0:
+        echo "gi-big";
+        break;
+    case 3:
+        echo "gi-long";
+        break;
+    case 4:
+        echo "gi-big";
+        break;
+    case 5:
+    	echo "gi-long";
+    	break;
+    default:
+        
+}
+
+
+
+?>
+
+
+			 set-bg" data-setbg="<?php echo base_url(); ?>assets/img/media/<?php echo $his['cimage_name'] ?>">
+				<a class="img-popup" href="<?php echo base_url(); ?>assets/img/media/<?php echo $his['cimage_name'] ?>"><i class="ti-plus"></i></a>
 			</div>
-			<div class="gallery-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/2.jpg">
+			<?php endforeach; ?>
+
+			<!-- <div class="gallery-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/2.jpg">
 				<a class="img-popup" href="<?php echo base_url(); ?>assets/img/gallery/2.jpg"><i class="ti-plus"></i></a>
 			</div>
 			<div class="gallery-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/3.jpg">
@@ -401,7 +443,7 @@
 			</div>
 			<div class="gallery-item set-bg" data-setbg="<?php echo base_url(); ?>assets/img/gallery/7.jpg">
 				<a class="img-popup" href="<?php echo base_url(); ?>assets/img/gallery/7.jpg"><i class="ti-plus"></i></a>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<!-- Gallery section -->
