@@ -102,6 +102,16 @@
                     <input type="text" class="form-control" value="" required="" name="c_title" placeholder="Category Titlle">
                 </div>               
         </div>
+        <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Is This Category Gallery?</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="is_gallery">
+                        <option value="no">No</opttion>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>               
+        </div>
+
          <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Category Description:</label>
                 <div class="col-sm-9">

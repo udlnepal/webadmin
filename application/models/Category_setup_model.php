@@ -12,6 +12,7 @@ public function set_category($cat_setup_id=0){
 		'c_title'=>$this->input->post('c_title'),
 		'c_shortdesc'=>$this->input->post('c_shortdesc'),
 		'c_order'=>$this->input->post('c_order'),
+		'is_gallery'=>$this->input->post('is_gallery'),
 
 	);
 	if($cat_setup_id==0){

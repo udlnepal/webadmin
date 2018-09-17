@@ -8,6 +8,7 @@ class Contact_setup extends Admin_controller{
 		$this->load->model('category_setup_model');
 		$this->load->model('admin_model');
 		$this->load->model('menu_setup_model');
+			$this->load->model('contact_setup_model');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library(array('session', 'form_validation'));
 	}
@@ -21,5 +22,16 @@ public function index(){
 		$this->load->view('admin/contact_setup');
 		$this->load->view('templates/footer');
 	}
+
+
+public function addsocial(){
+	//echo "i am here";exit;
+
+
+
+	$this->contact_setup_model->set_social();
+			redirect('admin/contact_setup',$data);
+}
+
 /* write above here */
 }

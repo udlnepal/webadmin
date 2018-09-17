@@ -43,20 +43,28 @@
                                     
                                          <div class="row">
                                         <div class="col-lg-12">
+                                          <?php echo form_open('admin/contact_setup/addsocial'); ?>  
                                             <div class="form-group row">
-                            <label for="address" class="col-sm-3 text-left control-label col-form-label">Social Media:</label>
-                                        <div class="col-sm-9">
-                                            <input type="checkbox" name="social_title" value="facebook" id="fb">&nbsp;<label for="fb">Facebook</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="twitter" id="tw">&nbsp;<label for="tw">Twitter</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="linkedin" id="ln">&nbsp;<label for="ln">LinkedIn</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="Youtube" id="yt">&nbsp;<label for="yt">Youtube</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="google-plus" id="gp">&nbsp;<label for="gp">Google Plus</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="pinterest" id="pi">&nbsp;<label for="pi">Pinterest</label>&nbsp;&nbsp;
-                                            <input type="checkbox" name="social_title" value="rss" id="rss">&nbsp;<label for="rss">RSS</label>&nbsp;&nbsp;
-                                            <button class="btn btn-success" type="submit">Add</button>
-                                            </div>               
+                            <select class="form-control col-lg-3">
+                                            <option>Facebook</option>
+                                         <option>Twitter</option>
+                                          <option>LinkedIn</option>
+                                         <option>Youtube</option>
+                                             <option>Google Plus</option>
+                                           <option>Pinterest</option>
+                                      <option>RSS</option>
+                                  </select>
+                                        <div class="col-sm-6">
+                                          <div class="input-group">
+                                          <span class="input-group-addon" style="padding-top:10px;"><strong>http://www.facebook.com/&nbsp;</strong></span>
+                                          <input type="text" class="form-control">
                                             </div>
-                                           
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button class="btn btn-success" type="submit">Add</button>
+                                            </div>               
+                                                </div>
+                                            <?php echo form_close(); ?>                                       
                                         </div>
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
@@ -107,23 +115,7 @@
       <div class="modal-body">
         <div class="row">
         <div class="col-lg-12">
-               <div class="form-group row">
-                
-                <div class="col-sm-3">
-                    <select name="social" class="form-control">                     
-                        <option value="facebook">Facebook</option>
-                        <option value="twitter">Twitter</option>
-                        <option value="google-plus">Google Plus</option>
-                        <option value="linkedin">LinkedIn</option>
-                         <option value="rss">RSS</option>
-                          <option value="youtube">Youtube</option>
-                           <option value="pinterest">Pinterest</option>
-                    </select>
-                </div>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control" name="social_link">
-                </div> 
-                </div>
+               
         		<div class="form-group row">
                 <label for="address" class="col-sm-3 text-left control-label col-form-label">Address:</label>
                 <div class="col-sm-9">
