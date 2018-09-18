@@ -45,19 +45,19 @@
                                         <div class="col-lg-12">
                                           <?php echo form_open('admin/contact_setup/addsocial'); ?>  
                                             <div class="form-group row">
-                            <select class="form-control col-lg-3">
-                                            <option>Facebook</option>
-                                         <option>Twitter</option>
-                                          <option>LinkedIn</option>
-                                         <option>Youtube</option>
-                                             <option>Google Plus</option>
-                                           <option>Pinterest</option>
-                                      <option>RSS</option>
+                            <select class="form-control col-lg-3" name="soc_title">
+                                            <option value="facebook">Facebook</option>
+                                         <option value="twitter">Twitter</option>
+                                          <option value="linkedin">LinkedIn</option>
+                                         <option value="youtube">Youtube</option>
+                                             <option value="google-plus">Google Plus</option>
+                                           <option value="pinterest">Pinterest</option>
+                                      <option value="rss">RSS</option>
                                   </select>
                                         <div class="col-sm-6">
                                           <div class="input-group">
                                           <span class="input-group-addon" style="padding-top:10px;"><strong>http://www.facebook.com/&nbsp;</strong></span>
-                                          <input type="text" class="form-control">
+                                          <input type="text" class="form-control" name="soc_link">
                                             </div>
                                             </div>
                                             <div class="col-lg-3">
@@ -66,7 +66,7 @@
                                                 </div>
                                             <?php echo form_close(); ?>                                       
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 pad_fix" >
                                             <table class="table table-bordered table-striped">
                                                 <tr><th>Social Media</th><td>Url</td></tr>
                                                 <tr><td>Facebook</td><td>www.facebook.com/timusumit</td></tr>

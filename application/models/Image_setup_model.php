@@ -48,7 +48,7 @@ public function delete_image($hi_id){
     return $this->db->delete('home_image_setup');
 }
 public function get_gallery_image(){
-    $query=$this->db->query('SELECT cimage_name FROM home_image_setup join home_content on cont_id=home_cont_id');
+    $query=$this->db->query('SELECT cimage_name FROM home_content join home_image_setup on cont_id=home_cont_id join category_setup on cat_setup_id=cat_id where c_order=5');
     return $query->result_array();
 }
 
