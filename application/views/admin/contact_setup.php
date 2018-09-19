@@ -68,8 +68,10 @@
                                         </div>
                                         <div class="col-lg-12 pad_fix" >
                                             <table class="table table-bordered table-striped">
-                                                <tr><th>Social Media</th><td>Url</td></tr>
-                                                <tr><td>Facebook</td><td>www.facebook.com/timusumit</td></tr>
+                                                <tr><th>Social Media</th><th>Url</th><th>Action</th></tr>
+                                                <?php foreach($social_media as $key=>$sm): ?>
+                                                <tr><td><?php echo $sm['soc_title']; ?></td><td>http://www.<?php echo $sm['soc_title']; ?>.com/<?php echo $sm['soc_link']; ?></td><td><button class="btn btn-warning">Edit</button>&nbsp;<button class="btn btn-danger">Delete</button></td></tr>
+                                              <?php endforeach; ?>
                                             </table>
                                         </div>
                                     </div>

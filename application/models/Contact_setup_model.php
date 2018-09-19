@@ -26,5 +26,13 @@ public function set_social($social_id=0){
 	}
 }
 
+
+public function get_social_data()
+    {
+       
+    $query = $this->db->get_where('social_media');
+    return $query->result_array();
+    }
+
 /*write above here */
 }
