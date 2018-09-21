@@ -2,7 +2,7 @@
      <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+                All Rights Reserved by Sumit Maharjan Designed and Developed by <a href="http://sumitmaharjan.com.np">Sumit</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

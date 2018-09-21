@@ -46,6 +46,31 @@ public function get_first_cont(){
 	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=1');
 return $query->result_array();
 }
+/*get second cat content*/
+public function get_second_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=2');
+return $query->result_array();
+}
+/*get third cat content*/
+public function get_third_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=3');
+return $query->result_array();
+}
+/*get fourth cat content*/
+public function get_fourth_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=4');
+return $query->result_array();
+}
+/*get sixth cat content*/
+public function get_fifth_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=6');
+return $query->result_array();
+}
+/*get seventh cat content*/
+public function get_sixth_cont(){
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=7');
+return $query->result_array();
+}
 
 
 
