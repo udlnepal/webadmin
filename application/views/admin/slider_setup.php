@@ -56,7 +56,7 @@
                                             Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
                                             <td>
-                                                <a class="btn btn-warning edit_btn_slider" data-toggle="modal" data-target="#editModal" data-id="<?php echo $sls['ss_id']; ?>">Edit</a>
+                                                <a class="btn btn-warning edit_btn_slider" data-toggle="modal" data-target="#editModal" data-id="<?php echo $sls['ss_id']; ?>" data-primary_slider_title="<?php echo $sls['primary_slider_title'];?>" data-sec_slider_title="<?php  echo $sls['sec_slider_title']; ?>">Edit</a>
                                                 &nbsp;&nbsp;<a href="<?php echo base_url('admin/slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                     	<?php endforeach; ?>
                                     	</table>
@@ -136,11 +136,11 @@
         $(document).on("click", ".edit_btn_slider", function () {
            
             var ss_id = $(this).data('id');
-            var icon_class= $(this).data('icon_class');
-            var hl_menu_title=$(this).data('hl_menu_title');
+            var primary_slider_title= $(this).data('primary_slider_title');
+            var sec_slider_title=$(this).data('sec_slider_title');
             var hl_menu_link =$(this).data('hl_menu_link');
-            $(".modal-body .form-group #icon_class").val(icon_class);
-            $(".modal-body .form-group #hl_menu_title").val(hl_menu_title);
+            $(".modal-body .form-group #primary_slider_title").val(primary_slider_title);
+            $(".modal-body .form-group #sec_slider_title").val(sec_slider_title);
             $(".modal-body .form-group #hl_menu_link").val(hl_menu_link);
             $(".edit_Slider_save form").attr('action','slider_setup/edit/'+ss_id);            
             $('#edithlm').modal('show');
@@ -174,13 +174,13 @@
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Primary Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" required="" name="primary_slider_title" value="<?php echo $sls['primary_slider_title'] ?>">
+                    <input type="text" class="form-control" required="" id="primary_slider_title" name="primary_slider_title" value="">
                 </div>               
             </div>
              <div class="form-group row">
                 <label for="sec_slider_title" class="col-sm-3 text-left control-label col-form-label">Secondary Title:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="sec_slider_title" value="<?php echo $sls['sec_slider_title'] ?>">
+                    <input type="text" class="form-control" name="sec_slider_title" id="sec_slider_title" value="">
                 </div>               
             </div>
             <div class="form-group row">
