@@ -56,7 +56,7 @@
                                             Button Text: <?php echo $sls['slider_btn_text']; ?><br> Button Link: <?php echo $sls['slider_btn_link']; ?>   
                                             </td>
                                             <td>
-                                                <a class="btn btn-warning edit_btn_slider" data-toggle="modal" data-target="#editModal" data-id="<?php echo $sls['ss_id']; ?>" data-primary_slider_title="<?php echo $sls['primary_slider_title'];?>" data-sec_slider_title="<?php  echo $sls['sec_slider_title']; ?>">Edit</a>
+                                                <a class="btn btn-warning edit_btn_slider" data-toggle="modal" data-target="#editModal" data-id="<?php echo $sls['ss_id']; ?>" data-primary_slider_title="<?php echo $sls['primary_slider_title'];?>" data-sec_slider_title="<?php  echo $sls['sec_slider_title']; ?>" data-slider_text="<?php echo $sls['slider_text']; ?>" data-slider_btn_text="<?php echo $sls['slider_btn_text']; ?>" data-slider_btn_link="<?php echo $sls['slider_btn_link']; ?>">Edit</a>
                                                 &nbsp;&nbsp;<a href="<?php echo base_url('admin/slider_setup/delete_slider/'.$sls['ss_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                     	<?php endforeach; ?>
                                     	</table>
@@ -138,10 +138,16 @@
             var ss_id = $(this).data('id');
             var primary_slider_title= $(this).data('primary_slider_title');
             var sec_slider_title=$(this).data('sec_slider_title');
-            var hl_menu_link =$(this).data('hl_menu_link');
+            var slider_text =$(this).data('slider_text');
+            var slider_btn_text =$(this).data('slider_btn_text');
+            var slider_btn_link =$(this).data('slider_btn_link');
+            
+
             $(".modal-body .form-group #primary_slider_title").val(primary_slider_title);
-            $(".modal-body .form-group #sec_slider_title").val(sec_slider_title);
-            $(".modal-body .form-group #hl_menu_link").val(hl_menu_link);
+            $(".modal-body .form-group #sec_slider_title").val(sec_slider_title);            
+            $(".modal-body .form-group #slider_text").val(slider_text);
+            $(".modal-body .form-group #slider_btn_text").val(slider_btn_text);
+            $(".modal-body .form-group #slider_btn_link").val(slider_btn_link);
             $(".edit_Slider_save form").attr('action','slider_setup/edit/'+ss_id);            
             $('#edithlm').modal('show');
             
@@ -186,19 +192,19 @@
             <div class="form-group row">
                 <label for="slider_text" class="col-sm-3 text-left control-label col-form-label">Slider Text:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" required="" name="slider_text" value="<?php echo $sls['slider_text'] ?>">
+                    <input type="text"  class="form-control" required="" id="slider_text" name="slider_text" value="">
                 </div>               
             </div>
             <div class="form-group row">
                 <label for="slider_btn_text" class="col-sm-3 text-left control-label col-form-label">Slider Button Text:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" required="" name="slider_btn_text" value="<?php echo $sls['slider_btn_text'] ?>">
+                    <input type="text" class="form-control" id="slider_btn_text" required="" name="slider_btn_text" value="">
                 </div>               
             </div>
             <div class="form-group row">
                 <label for="slider_btn_link" class="col-sm-3 text-left control-label col-form-label">Slider Button Link:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" required="" name="slider_btn_link" value="<?php echo $sls['slider_btn_link'] ?>">
+                    <input type="text" class="form-control" required="" id="slider_btn_link" name="slider_btn_link" value="">
                 </div>               
             </div>
          
