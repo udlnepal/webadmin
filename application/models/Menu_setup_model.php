@@ -41,7 +41,15 @@ class Menu_setup_model extends CI_Model {
     	return $query->result_array();
 
     }
+    /* menu with inner page */
+    public function get_menu_inner(){
+        $this->db->select('*');
+        $this->db->from('menu_setup');
+        $this->db->where("is_inner_page","yes");
+        $query=$this->db->get();
+        return $query->result_array();
 
+    }
 
 
     public function get_page_content(){

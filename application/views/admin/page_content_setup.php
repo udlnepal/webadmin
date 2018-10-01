@@ -10,7 +10,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="admin">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Image Setup</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Inner Page Content Setup</li>
                                 </ol>
                             </nav>
                         </div>
@@ -37,12 +37,12 @@
                             <div class="card-body">
                                 <div class="col-lg-12">
                                     
-                                        <h4 class="card-title">Page Content Setup</h4>
+                                        <h4 class="card-title">Inner Page Content Setup</h4>
                                    
                                     <div class="clearfix"></div>
                                     <div class="row">
                                         <div class="col-lg-12 text-right"><button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Add New</button></div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mar-5-top">
                                             <table class="table table-bordered table-striped">
                                                 <tr>
                                               <th width="5%">S.N.</th>
@@ -91,7 +91,7 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open('admin/image_setup/do_upload'); ?>
+    <?php echo form_open('admin/page_content_setup/add'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
@@ -103,14 +103,14 @@
         <div class="row">
         <div class="col-lg-12">
                <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Menu:</label>
                 <div class="col-sm-9">
                     <select name="c_title" class="form-control category" required="" >
                         <option>--select--</option>
-                        <?php foreach($category_setup as $key=>$cs): ?>
-                        <option value="<?php echo $cs['cat_setup_id'];?>">
+                        <?php foreach($menu_setup as $key=>$cs): ?>
+                        <option value="<?php echo $cs['mid'];?>">
                         <?php 
-                            echo $cs['c_title']; ?>
+                            echo $cs['menu_name']; ?>
                  </option>
                   <?php  endforeach;
                          ?>
@@ -120,7 +120,7 @@
                 </div>
      
          <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Title:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Title:</label>
                 <div class="col-sm-9">
                    <input type="text" class="form-control">
                 </div> 
@@ -129,9 +129,9 @@
         
         
         <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Content:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Content:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
+                    <textarea name="page_content" class="form-control ckeditor"></textarea>
                 </div>               
         </div>
          

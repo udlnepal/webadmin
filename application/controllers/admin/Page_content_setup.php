@@ -17,6 +17,7 @@ $this->load->library(array('session','form_validation'));
 public function index(){
 //	$data['category_setup']=$this->category_setup_model->get_category();
     $data['header_title_setup'] = $this->header_setup_model->get_header_title();
+    $data['menu_setup']=$this->menu_setup_model->get_menu_inner();
 //    $data['home_image_setup']=$this->image_setup_model->get_home_image_name();
     $data['titlename']=$this->admin_model->get_logged_user();
 		$this->load->view('templates/header');
