@@ -1,0 +1,5 @@
+page_content_setup:
+pc_id
+pc_mid
+page_title
+page_content

@@ -37,7 +37,7 @@
                             <div class="card-body">
                                 <div class="col-lg-12">
                                     
-                                        <h4 class="card-title">Image Setup</h4>
+                                        <h4 class="card-title">Page Content Setup</h4>
                                    
                                     <div class="clearfix"></div>
                                     <div class="row">
@@ -45,19 +45,11 @@
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
                                                 <tr>
-                                              <th width="10%">Image</th>
-                                              <th width="25%">Category</th><th width="30%">Content </th><th width="15%">Action</th></tr>
-                                              <?php foreach($home_image_setup as $his): ?>
-                                              <tr><td><img src="<?php echo base_url('assets/img/media/'); ?><?php echo $his['cimage_name']; ?>" style="height:60px; width: 120px;"></td><td><?php echo $his['c_title']; ?></td><td><?php echo $his['h_title']; ?></td>
-
-                                                <td>
-                                                    
-                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/image_setup/delete_img/'.$his['hi_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
-
-                                                </td>
-
-                                            </tr>  
-                                               <?php endforeach; ?>   
+                                              <th width="5%">S.N.</th>
+                                              <th width="15%">Title</th><th width="65%">Content</th><th width="15%">Action</th></tr>
+                                              <tr>
+                                                  <td></td><td></td><td></td><td>
+                                              </tr>
                                             </table>
                                         </div>
                                     </div>
@@ -99,7 +91,7 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open_multipart('admin/image_setup/do_upload'); ?>
+    <?php echo form_open('admin/image_setup/do_upload'); ?>
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
@@ -119,8 +111,6 @@
                         <option value="<?php echo $cs['cat_setup_id'];?>">
                         <?php 
                             echo $cs['c_title']; ?>
-
-
                  </option>
                   <?php  endforeach;
                          ?>
@@ -130,21 +120,18 @@
                 </div>
      
          <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Content:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Title:</label>
                 <div class="col-sm-9">
-                    <select class="form-control content" name="content">
-                    	
-                    </select>
-
+                   <input type="text" class="form-control">
                 </div> 
                          
         </div>
         
         
         <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Image:</label>
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Content:</label>
                 <div class="col-sm-9">
-                    <input type="file" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
+                    <input type="text" class="form-control" value="" required="" name="userfile" placeholder="Select Image">
                 </div>               
         </div>
          
