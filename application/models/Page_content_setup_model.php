@@ -39,6 +39,11 @@ public function get_page_content(){
 	return $query->result_array();
 }
 
+public function get_menu_unset(){
+	$query=$this->db->query('SELECT m.menu_name,p.page_title from menu_setup m join page_content_setup p on m.mid=p.pc_mid ');
+	return $query->result_array();
+}
+
 /*write above here */
 }
 ?>

@@ -29,7 +29,8 @@
                                                 <td>
                                                     <?php echo $ms['page_content'] ?>
                                                 </td> -->
-                                                <td width="20%"><a href="<?php echo base_url(); ?>admin/menu_setup/testurl">Test</a></td>
+                                                <td width="20%">
+                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td>
                                             </tr>
                                             <?php endforeach; ?>        
                                             </tbody></table>

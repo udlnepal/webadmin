@@ -50,7 +50,7 @@
                                               <?php foreach($page_content_setup as $key=>$data): ?>
                                               <tr>
                                                  
-                                                  <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td>
+                                                  <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td>
                                               </tr>
                                           <?php endforeach;?>
                                             </table>
