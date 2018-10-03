@@ -48,10 +48,6 @@ class Menu_setup_model extends CI_Model {
         $this->db->where("is_inner_page","yes");
         $query=$this->db->get();
         return $query->result_array();
-        
-
-
-
     }
 
 

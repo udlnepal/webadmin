@@ -62,34 +62,6 @@
                 </div>
             </div>
 
-<script type="text/javascript">
-
-
-    $(document).ready(function() {
-        //  console.log( "ready!" );
-
-        $('select[name="c_title"]').on('change', function() {
-            var cont_id = $(this).val();
-            if(cont_id) {
-                $.ajax({
-                 
-                    url: '<?php echo base_url('admin/image_setup'); ?>/myformAjax/'+cont_id,
-                    type: "GET",
-                    dataType: "json",
-                    success:function(data) {
-                        $('select[name="content"]').empty();
-                        $.each(data, function(key, value) {
-                            $('select[name="content"]').append('<option value="'+ value.home_cont_id +'">'+ value.h_title +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('select[name="content"]').empty();
-            }
-        });
-    });
-</script>
-
 
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
