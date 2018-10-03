@@ -20,14 +20,16 @@
                                     </div>
                                     <div class="col-lg-12 mar-10-top">
                                         <table class="table table-bordered table-striped">
-                                            <tbody><tr><th>Menu Name</th><th>Page Title</th><th>Page Content</th><th>Action</th></tr>
-                                            <?php foreach($menu_setup as $ms): ?>
-                                            <tr><td><?php echo $ms['menu_name'] ?></td>
-                                                <td><?php echo $ms['page_title'] ?></td>
+                                            <tbody><tr><th>S.N</th><th>Menu Name</th><!-- <th>Page Title</th><th>Page Content</th> --><th>Action</th></tr>
+                                            <?php foreach($menu_setup as $key=>$ms): ?>
+                                            <tr>
+                                                <td width="10%"><?php echo $key+1; ?></td>
+                                                <td width="70%"><?php echo $ms['menu_name'] ?></td>
+                                                <!-- <td><?php echo $ms['page_title'] ?></td>
                                                 <td>
                                                     <?php echo $ms['page_content'] ?>
-                                                </td>
-                                                <td><a href="<?php echo base_url(); ?>admin/menu_setup/testurl">Test</a></td>
+                                                </td> -->
+                                                <td width="20%"><a href="<?php echo base_url(); ?>admin/menu_setup/testurl">Test</a></td>
                                             </tr>
                                             <?php endforeach; ?>        
                                             </tbody></table>
@@ -116,10 +118,10 @@
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Order:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="menu_order" placeholder="Menu Name">
+                    <input type="text" class="form-control" value="" required="" name="menu_order" placeholder="Menu Order">
                 </div>               
             </div>
-            <div class="form-group row">
+            <!-- <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Page Title:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" value="" required="" name="page_title" placeholder="Menu Name">
@@ -130,7 +132,7 @@
                 <div class="col-sm-9">
                     <textarea  class="form-control ckeditor" value="" required="" name="page_content" ></textarea>
                 </div>               
-            </div>
+            </div> -->
          <!--     <input type="hidden" name="page_id" value="<?php echo $mid; ?>" />  
              -->
 

@@ -39,8 +39,8 @@ public function index(){
  
         $this->form_validation->set_rules('menu_name', 'Menu Name', 'required');
         $this->form_validation->set_rules('is_inner_page', 'Is Inner Page', 'required');
-        $this->form_validation->set_rules('page_title', 'Page Title', 'required');
-        $this->form_validation->set_rules('page_content', 'Page Content', 'required');
+       // $this->form_validation->set_rules('page_title', 'Page Title', 'required');
+       // $this->form_validation->set_rules('page_content', 'Page Content', 'required');
  
         if ($this->form_validation->run() === FALSE) {
             redirect('admin/menu_setup',$data);

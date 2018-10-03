@@ -19,8 +19,8 @@ class Menu_setup_model extends CI_Model {
             'menu_order' => $this->input->post('menu_order'),
             'slug' => $slug,
            	'ext_url' => $this->input->post('ext_url'),
-           	'page_title' => $this->input->post('page_title'),
-           	'page_content' => $this->input->post('page_content'),
+         //  	'page_title' => $this->input->post('page_title'),
+           //	'page_content' => $this->input->post('page_content'),
            // 'page_id' => $this->input->post('mid'),
         );
         

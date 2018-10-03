@@ -29,8 +29,13 @@ public function set_category($cat_setup_id=0){
 
 
 public function get_category(){
-$query=$this->db->get_where('category_setup');
-return $query->result_array();
+
+
+		$this->db->select('*');
+        $this->db->from('category_setup');
+        $this->db->order_by("c_order", "asc");
+        $query=$this->db->get(); 
+    	return $query->result_array();
 }
 
 
