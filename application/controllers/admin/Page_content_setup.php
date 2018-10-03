@@ -6,6 +6,7 @@ public function __construct(){
 parent:: __construct();
 $this->load->model('category_setup_model');
 $this->load->model('admin_model');
+$this->load->model('page_content_setup_model');
 $this->load->model('menu_setup_model');
 $this->load->model('content_setup_model');
 $this->load->model('image_setup_model');
@@ -20,11 +21,17 @@ public function index(){
     $data['menu_setup']=$this->menu_setup_model->get_menu_inner();
 //    $data['home_image_setup']=$this->image_setup_model->get_home_image_name();
     $data['titlename']=$this->admin_model->get_logged_user();
+    $data['page_content_setup']=$this->page_content_setup_model->get_page_content();
 		$this->load->view('templates/header');
 		$this->load->view('templates/headernav',$data);
 		$this->load->view('templates/sidebar');
 		$this->load->view('admin/Page_content_setup',$data);
 		$this->load->view('templates/footer');
+}
+
+public function add(){
+  $this->page_content_setup_model->set_content();
+  redirect('admin/page_content_setup',$data);
 }
 
 

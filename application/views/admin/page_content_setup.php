@@ -46,10 +46,13 @@
                                             <table class="table table-bordered table-striped">
                                                 <tr>
                                               <th width="5%">S.N.</th>
-                                              <th width="15%">Title</th><th width="65%">Content</th><th width="15%">Action</th></tr>
+                                              <th width="15%">Menu</th><th width="15%">Title</th><th width="40%">Content</th><th width="15%">Action</th></tr>
+                                              <?php foreach($page_content_setup as $key=>$data): ?>
                                               <tr>
-                                                  <td></td><td></td><td></td><td>
+                                                 
+                                                  <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td>
                                               </tr>
+                                          <?php endforeach;?>
                                             </table>
                                         </div>
                                     </div>
@@ -105,10 +108,10 @@
                <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Menu:</label>
                 <div class="col-sm-9">
-                    <select name="c_title" class="form-control category" required="" >
+                    <select name="menu_name" class="form-control menu_name" required="" >
                         <option>--select--</option>
                         <?php foreach($menu_setup as $key=>$cs): ?>
-                        <option value="<?php echo $cs['mid'];?>">
+                        <option>
                         <?php 
                             echo $cs['menu_name']; ?>
                  </option>
@@ -122,7 +125,7 @@
          <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Title:</label>
                 <div class="col-sm-9">
-                   <input type="text" class="form-control">
+                   <input name="page_title" type="text" class="form-control">
                 </div> 
                          
         </div>

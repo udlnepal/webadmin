@@ -22,7 +22,7 @@ endforeach;
 	<!-- Courses section -->
 	<section class="full-courses-section spad pt-0">
 		<div class="container">
-			<?php  foreach($menu_setup as $mn): 
+			<?php  foreach($page_content_setup as $mn): 
 	if($mn['slug']==$this->uri->segment(3)){ ?>
 			<div class="row">
 				<h3><?php echo $mn['page_title']; ?></h3>
