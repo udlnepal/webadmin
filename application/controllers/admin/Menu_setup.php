@@ -9,6 +9,7 @@ class Menu_setup extends Admin_controller {
         $this->load->model('slider_setup_model');
         $this->load->model('admin_model');
         $this->load->model('menu_setup_model');
+        $this->load->model('category_setup_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
  
@@ -21,6 +22,7 @@ public function index(){
     $data['header_left_menu']=$this->header_setup_model->get_header_left_menu();
     $data['menu_setup']=$this->menu_setup_model->get_menu();
     //$data['page_id'] = $this->session->userdata('page_id');
+    $data['category_setup']=$this->category_setup_model->get_category();
      $data['title'] = 'Add Menu';
 	   	$this->load->view('templates/header',$data);
 		$this->load->view('templates/headernav',$data);

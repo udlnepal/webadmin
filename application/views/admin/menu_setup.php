@@ -56,12 +56,7 @@
       </div>
       <?php echo form_open_multipart('admin/menu_setup/add'); ?>  
       <div class="modal-body">
-            <div class="form-group row">
-                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Name:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="menu_name" placeholder="Menu Name">
-                </div>               
-            </div>
+          
 
 
             <div class="form-group row">
@@ -95,6 +90,18 @@
     }
 });   
    
+
+
+
+
+        $('select[name="c_title"]').on('change', function() {
+            var c_title = $(this).val();
+          // alert(cont_id);
+          $("input.menu_name").val(c_title);
+        });
+   
+
+
     });
 </script>
 
@@ -109,12 +116,19 @@
              <div class="form-group row hidden_field2">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
-                    <select class="form-control">
-                        <option>CAtegory 1</option>
+                    <select class="form-control" name="c_title">
+                    <?php foreach($category_setup as $key=>$data): ?>  
+                        <option><?php echo $data['c_title']; ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>               
             </div>
-
+  <div class="form-group row">
+                <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control menu_name" value="" required="" name="menu_name" placeholder="Menu Name">
+                </div>               
+            </div>
 
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Order:</label>
