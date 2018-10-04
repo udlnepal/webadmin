@@ -54,11 +54,13 @@ public function index(){
 
 public function edit()
 {
+
     $mid=$this->uri->segment(4);
     if(empty($mid)){
         show_404();
     }
     $this->menu_setup_model->set_menu($mid);
+    redirect('admin/menu_setup');
 }
 
 

@@ -42,7 +42,7 @@
                                                 ?></td>
                                                 <td width="30%"><?php echo $ms['ext_url'];?></td>
                                                    <td width="20%">
-                                                    <a  class="btn btn-warning">Edit</a>&nbsp;
+                                                    <a data-toggle="modal" data-target="#editModal" data-id="<?php echo $ms['mid']; ?>" data-menu_name="<?php echo $ms['menu_name']; ?>" data-is_inner_page="<?php echo $ms['is_inner_page']; ?>" data-ext_url="<?php echo $ms['ext_url']; ?>" data-menu_order="<?php echo $ms['menu_order']; ?>"  class="btn editmenu btn-warning">Edit</a>&nbsp;
                                                     <a href="<?php echo base_url('admin/menu_setup/delete/'.$ms['mid']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')" >Delete</a></td>
                                             </tr>
                                             <?php endforeach; ?>        
@@ -162,13 +162,36 @@
   </div>
 </div>
 
+<!-- edit modal -->
+<script>
+    $(function(){
+        $(document).on("click", ".editmenu", function () {
+           
+            var mid = $(this).data('id');
+            var is_inner_page= $(this).data('is_inner_page');
+            var ext_url=$(this).data('ext_url');
+            var c_title =$(this).data('c_title');
+            var menu_name =$(this).data('menu_name');
+            var menu_order =$(this).data('menu_order');
+            
 
+            $(".modal-body .form-group #is_inner_page").val(is_inner_page);
+            $(".modal-body .form-group #menu_order").val(menu_order);            
+            $(".modal-body .form-group #ext_url").val(ext_url);
+            $(".modal-body .form-group #c_title").val(c_title);
+            $(".modal-body .form-group #menu_name").val(menu_name);
+            $("#editModal form").attr('action','/menu_setup/edit/'+mid);            
+            $('#editModal').modal('show');
+            
+        });
+});
+</script>
 
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><?php echo $title; ?></h4>
+        <h4 class="modal-title" id="myModalLabel">Edit Menu</h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <?php echo form_open(); ?>  
@@ -179,7 +202,7 @@
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Is it Inner Page?:</label>
                 <div class="col-sm-9">
-                   <select class="form-control" name="is_inner_page" id="is_inner_Page">
+                   <select class="form-control" name="is_inner_page" id="is_inner_page">
                     <option id="yesInner" value="yes">Yes</option>
                     <option id="noInner" value="no">No</option>
                     <option id="extUrl" value="ext">External URL</option>
@@ -188,18 +211,18 @@
             </div>
 
 
-            <div class="form-group row hidden_field">
+            <div class="form-group row ">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">External  Url:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" value=""
-                     name="ext_url" placeholder="http://www.example.com">
+                     name="ext_url" placeholder="http://www.example.com" id="ext_url">
                 </div>               
             </div>
 
-             <div class="form-group row hidden_field2">
+             <div class="form-group row ">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
-                    <select class="form-control" name="c_title">
+                    <select class="form-control" name="c_title" id="c_title">
                     <?php foreach($category_setup as $key=>$data): ?>  
                         <option><?php echo $data['c_title']; ?></option>
                     <?php endforeach; ?>
@@ -209,14 +232,14 @@
   <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Name:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control menu_name" value="" required="" name="menu_name" placeholder="Menu Name">
+                    <input type="text" id="menu_name" class="form-control menu_name" value="" required="" name="menu_name" placeholder="Menu Name">
                 </div>               
             </div>
 
             <div class="form-group row">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Menu Order:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" name="menu_order" placeholder="Menu Order">
+                    <input type="text" class="form-control" value="" required="" id="menu_order" name="menu_order" placeholder="Menu Order">
                 </div>               
             </div>
          
