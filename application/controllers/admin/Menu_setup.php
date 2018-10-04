@@ -52,12 +52,24 @@ public function index(){
         }
     }
 
-
-public function testurl(){
-    //echo "iamhere"; exit;
-    $this->menu_setup_model->get_page_content();
+public function edit()
+{
+    $mid=$this->uri->segment(4);
+    if(empty($mid)){
+        show_404();
+    }
+    $this->menu_setup_model->set_menu($mid);
 }
 
+
+public function delete(){
+    $mid= $this->uri->segment(4);
+     if(empty($mid)){
+        show_404();
+     }
+     $this->menu_setup_model->delete_menu($mid);
+     redirect('admin/menu_setup');
+}
 
 }
 ?>
