@@ -35,16 +35,14 @@ public function add(){
 }
 
 
-
-
-
-/* public function myformAjax($cont_id) { 
-       $result = $this->db->where("cat_id",$cont_id)->get("home_content")->result();
-       echo json_encode($result);
-   }
-
-
-*/
+public function delete(){
+  $home_cont_id=$this->uri->segment(4);
+  if($home_cont_id==0){
+    error_404();
+  }
+  $this->page_content_setup_model->delete_content($home_cont_id);
+  redirect('admin/page_content_setup');
+}
 
 
 /* write above here */

@@ -50,7 +50,8 @@
                                               <?php foreach($page_content_setup as $key=>$data): ?>
                                               <tr>
                                                  
-                                                  <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td><a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger">Delete</a></td>
+                                                  <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td><a class="btn btn-warning">Edit</a>&nbsp;
+                                                    <a href="<?php echo base_url('admin/page_content_setup/delete/'.$data['pc_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                               </tr>
                                           <?php endforeach;?>
                                             </table>

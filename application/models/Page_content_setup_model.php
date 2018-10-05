@@ -44,6 +44,11 @@ public function get_menu_unset(){
 	return $query->result_array();
 }
 
+public function delete_content($pc_id){
+	$this->db->where('pc_id',$pc_id);
+	return $this->db->delete('page_content_setup');
+}
+
 /*write above here */
 }
 ?>
