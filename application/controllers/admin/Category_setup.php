@@ -42,6 +42,16 @@ class Category_setup extends Admin_controller{
 
 	}
 
+	public function edit(){
+		$cat_setup_id=$this->uri->segment(4);
+		if(empty($cat_setup_id)){
+			show_404();
+		}
+		$this->category_setup_model->set_category($cat_setup_id);
+		redirect('admin/Category_setup');
+
+	}
+
 	public function delete_cat(){
 		$cat_setup_id=$this->uri->segment(4);
 		if(empty($cat_setup_id)){

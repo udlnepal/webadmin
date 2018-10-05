@@ -26,28 +26,22 @@ public function index(){
 
 
 public function add(){
-	/*$data['title']='Add Content';
-	$this->form_validation->set_rules('c_title');
-	$this->form_validation->set_rules('h_title','Content Title','required');
-	$this->form_validation->set_rules('h_description','Content Description','required');
-	$this->form_validation->set_rules('h_author');
-	$this->form_validation->set_rules('h_location');
-	$this->form_validation->set_rules('h_date');
-
-	if ($this->form_validation->run()== FALSE){
-		echo "i am here"; exit;
-		redirect('admin/content_setup',$data);
-		
-		}
-		else{
-			echo "i am not there"; exit;*/
+	
 			$this->content_setup_model->set_content();
 			redirect('admin/content_setup',$data);
-		/*}*/
 	
 
 }
 
+
+public function edit(){
+	$home_cont_id=$this->uri->segment(4);
+	if(empty($home_cont_id)){
+		show_404();
+	}
+	$this->content_setup_model->set_content($home_cont_id);
+	redirect(base_url().'admin/content_setup');
+}
 
 public function delete_cont(){
 		$home_cont_id=$this->uri->segment(4);

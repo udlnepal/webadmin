@@ -23,6 +23,7 @@ $data=array(
 'h_description'=>$this->input->post('h_description'),
 'h_author'=>$this->input->post('h_author'),
 'h_location'=>$this->input->post('h_location'),
+'h_date'=>$this->input->post('h_date'),
 'cat_id'=>$id,
 );
 if($home_cont_id==0){
@@ -43,34 +44,10 @@ return $query->result_array();
 
 /* get first cat content */
 public function get_first_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=1');
+	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id');
 return $query->result_array();
 }
-/*get second cat content*/
-public function get_second_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=2');
-return $query->result_array();
-}
-/*get third cat content*/
-public function get_third_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=3');
-return $query->result_array();
-}
-/*get fourth cat content*/
-public function get_fourth_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=4');
-return $query->result_array();
-}
-/*get sixth cat content*/
-public function get_fifth_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=6');
-return $query->result_array();
-}
-/*get seventh cat content*/
-public function get_sixth_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id WHERE c_order=7');
-return $query->result_array();
-}
+
 
 
 

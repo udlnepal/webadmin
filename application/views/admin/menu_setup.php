@@ -166,7 +166,8 @@
 <script>
     $(function(){
         $(document).on("click", ".editmenu", function () {
-           
+           $('.hidden_ext').hide();
+           $('.hidden_cat').hide();
             var mid = $(this).data('id');
             var is_inner_page= $(this).data('is_inner_page');
             var ext_url=$(this).data('ext_url');
@@ -180,9 +181,46 @@
             $(".modal-body .form-group #ext_url").val(ext_url);
             $(".modal-body .form-group #c_title").val(c_title);
             $(".modal-body .form-group #menu_name").val(menu_name);
-            $("#editModal form").attr('action','/menu_setup/edit/'+mid);            
+            $("#editModal form").attr('action','menu_setup/edit/'+mid);            
             $('#editModal').modal('show');
             
+
+        
+        
+            switch (is_inner_page) {
+            case "no":
+                $('.hidden_cat').show();
+                break;
+            case "ext":
+                $('.hidden_ext').show();
+                break;   
+            default:        
+                }
+
+
+
+            $('select[name="is_inner_page"]').on('change', function() {
+            var is_inner_page = $(this).val();
+         
+            switch (is_inner_page) {
+            case "no":
+                $('.hidden_cat').show();
+                $('.hidden_ext').hide();
+                $(".modal-body .form-group #ext_url").val("");
+                break;
+            case "ext":
+                $('.hidden_ext').show();
+                $('.hidden_cat').hide();
+                break;   
+            default:        
+                $(".modal-body .form-group #ext_url").val("");
+                }
+
+
+        });
+   
+
+
         });
 });
 </script>
@@ -211,7 +249,7 @@
             </div>
 
 
-            <div class="form-group row ">
+            <div class="form-group row hidden_ext ">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">External  Url:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" value=""
@@ -219,7 +257,7 @@
                 </div>               
             </div>
 
-             <div class="form-group row ">
+             <div class="form-group row hidden_cat ">
                 <label for="primary_slider_title" class="col-sm-3 text-left control-label col-form-label">Select Category:</label>
                 <div class="col-sm-9">
                     <select class="form-control" name="c_title" id="c_title">

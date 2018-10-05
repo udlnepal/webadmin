@@ -64,16 +64,19 @@
 			<div class="row">
 
 				<?php foreach($home_content as $key=>$hc): ?>
+					
+				<?php if($hc['c_order']==1){ ?>
+					<?php $count=0; ?>
 				<div class="col-lg-4 col-sm-6 service-item">
 					<div class="service-icon">
-						<img src="<?php echo base_url(); ?>assets/img/services-icons/<?php echo $key+1; ?>.png" alt="1">
+						<img src="<?php echo base_url(); ?>assets/img/services-icons/<?php echo $count+1; ?>.png" alt="1">
 					</div>
 					<div class="service-content">
 						<h4><?php echo $hc['h_title'] ?></h4>
-						<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue. Aenean dos cursus lania.</p>
+						<p><?php echo $hc['h_description'] ?></p>
 					</div>
 				</div>
-
+			<?php $count++;}?>
 				<?php endforeach; ?>
 
 
@@ -460,20 +463,27 @@ switch ($key) {
 			<?php endforeach; ?>
 			</div>
 			<div class="row">
+				<?php foreach($home_content as $key=>$hc): ?>
+					<?php if($hc['c_order']==6){ ?>
 				<div class="col-xl-6">
 					<div class="blog-item">
 						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/blog/1.jpg"></div>
 						<div class="blog-content">
-							<h4>Parents who try to be their children’s best friends</h4>
+							<h4><?php echo $hc['h_title'] ?></h4>
 							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> 24 Mar 2018</span>
-								<span><i class="fa fa-user"></i> Owen Wilson</span>
+								<span><i class="fa fa-calendar-o"></i> <?php $datehome=explode(" ",$hc['h_date']);
+
+									echo $datehome[0];
+								 ?></span>
+								<span><i class="fa fa-user"></i> <?php echo ucfirst($hc['h_author']); ?></span>
 							</div>
-							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
+							<p><?php echo $hc['h_description']; ?></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-6">
+			<?php }?>
+			<?php endforeach; ?>
+			<!-- 	<div class="col-xl-6">
 					<div class="blog-item">
 						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/blog/2.jpg"></div>
 						<div class="blog-content">
@@ -485,8 +495,8 @@ switch ($key) {
 							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-6">
+				</div> -->
+				<!-- <div class="col-xl-6">
 					<div class="blog-item">
 						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/blog/3.jpg"></div>
 						<div class="blog-content">
@@ -498,8 +508,8 @@ switch ($key) {
 							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-6">
+				</div> -->
+				<!-- <div class="col-xl-6">
 					<div class="blog-item">
 						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/blog/4.jpg"></div>
 						<div class="blog-content">
@@ -511,7 +521,7 @@ switch ($key) {
 							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
