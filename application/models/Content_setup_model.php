@@ -44,7 +44,7 @@ return $query->result_array();
 
 /* get first cat content */
 public function get_first_cont(){
-	$query=$this->db->query('SELECT * FROM home_content join category_setup on cat_setup_id= cat_id');
+	$query=$this->db->query('SELECT h.*,c.*,i.* FROM home_content h join category_setup c on c.cat_setup_id= h.cat_id left join home_image_setup i on h.home_cont_id=i.cont_id');
 return $query->result_array();
 }
 

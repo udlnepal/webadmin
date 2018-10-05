@@ -467,7 +467,9 @@ switch ($key) {
 					<?php if($hc['c_order']==6){ ?>
 				<div class="col-xl-6">
 					<div class="blog-item">
-						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/blog/1.jpg"></div>
+						<?php if($hc['c_order']==6)?>
+						<div class="blog-thumb set-bg" data-setbg="<?php echo base_url(); ?>assets/img/media/<?php echo $hc['cimage_name']; ?>"></div>
+						<?php ?>
 						<div class="blog-content">
 							<h4><?php echo $hc['h_title'] ?></h4>
 							<div class="blog-meta">
