@@ -34,7 +34,7 @@ public function do_upload()
                 $config['upload_path']          = './assets/img/media';
                 $config['allowed_types']        = 'jpg|jpeg|png|gif';
                 $config['file_name']='0';
-
+                //$config['overwrite']=TRUE;
 
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
@@ -85,7 +85,15 @@ public function delete_img(){
     }
     $this->image_setup_model->delete_image($hi_id);
     redirect(base_url('admin/image_setup'));
+}
 
+public function edit(){
+    $hi_id=$this->uri->segment(4);
+    if(empty($hi_id)){
+        show_404();
+    }
+    $this->image_setup_model->set_slider_name($hi_id);
+    redirect(base_url('admin/image_setup'));
 }
 
 

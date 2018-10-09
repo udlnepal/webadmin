@@ -11,16 +11,11 @@ class Image_setup_model extends CI_Model {
 
              $this->load->helper('url');
  
+
         $data = array(
             'cimage_name'=>$file_name,
             'cont_id'=>$this->input->post('content'),
-         //    'title' => $this->input->post('title'),
-           /* 'primary_slider_title'=>$this->input->post('primary_slider_title'),
-            'sec_slider_title'=>$this->input->post('sec_slider_title'),
-            'slider_text'=>$this->input->post('slider_text'),
-            'slider_btn_text'=>$this->input->post('slider_btn_text'),
-            'slider_btn_link'=>$this->input->post('slider_btn_link'),
-*/
+   
 
 
         );

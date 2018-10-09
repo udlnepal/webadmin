@@ -41,7 +41,7 @@
                                    
                                     <div class="clearfix"></div>
                                     <div class="row">
-                                        <div class="col-lg-12 text-right"><button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Add New</button></div>
+                                        <div class="col-lg-12 text-right"><button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Add/Edit</button></div>
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
                                                 <tr>
@@ -52,7 +52,7 @@
 
                                                 <td>
                                                     
-                                                    <a class="btn btn-warning">Edit</a>&nbsp;<a class="btn btn-danger" href="<?php echo base_url('admin/image_setup/delete_img/'.$his['hi_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                                                    <a class="btn btn-danger" href="<?php echo base_url('admin/image_setup/delete_img/'.$his['hi_id']);?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
 
                                                 </td>
 
@@ -102,7 +102,7 @@
     <?php echo form_open_multipart('admin/image_setup/do_upload'); ?>
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add/Edit Content</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
