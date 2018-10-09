@@ -31,7 +31,7 @@ if($home_cont_id==0){
 }
 else{
 $this->db->where('home_cont_id',$home_cont_id);
-return $this->db->update('home_cont_id',$data);
+return $this->db->update('home_content',$data);
 
 }
 }	
