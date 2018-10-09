@@ -35,12 +35,21 @@ public function add(){
 }
 
 
-public function delete(){
-  $home_cont_id=$this->uri->segment(4);
-  if($home_cont_id==0){
+public function edit(){
+  $pc_id=$this->uri->segment(4);
+  if($pc_id==0){
     error_404();
   }
-  $this->page_content_setup_model->delete_content($home_cont_id);
+  $this->page_content_setup_model->set_content($pc_id);
+  redirect('admin/page_content_setup');
+}
+
+public function delete(){
+  $pc_id=$this->uri->segment(4);
+  if($pc_id==0){
+    error_404();
+  }
+  $this->page_content_setup_model->delete_content($pc_id);
   redirect('admin/page_content_setup');
 }
 
