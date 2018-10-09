@@ -10,27 +10,24 @@ public function set_content($pc_id=0){
 	$this->load->helper('url');
 	$posted_mn=$this->input->post('menu_name');
 	$page_title=$this->input->post('page_title');
-// echo 'this was posted:'.$posted_mn.$page_title; exit;
 	$this->db->select('mid');
 	$this->db->where('menu_name',$posted_mn);
 	$query= $this->db->get('menu_setup');
-
-
-	// print_r($query);exit;
 	$test=$query->result();
-	$id=$test[0]->mid;
+	$gid=$test[0]->mid;
+
 	$data=array(
 		'page_title'=>$this->input->post('page_title'),
 		'page_content'=>$this->input->post('page_content'),
-		'pc_mid'=>$id,
+		'pc_mid'=>$gid,
 	);
-if($home_cont_id==0){
+if($pc_id==0){
 	return $this->db->insert('page_content_setup',$data);
 
 }
 else{
 	$this->db->where('pc_id',$pc_id);
-	return $this->db->update('pc_id',$data);
+	return $this->db->update('page_content_setup',$data);
 }
 
 }
