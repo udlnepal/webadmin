@@ -96,13 +96,55 @@ class User extends CI_Controller {
     }
 
 
-public function changepassword(){
+
+    public function changepassword(){   
+
+       if ($this->session->userdata('is_logged_in')) {
 
             $this->load->view('templates/header');
             $this->load->view('user/changepassword');
             $this->load->view('templates/footer');
 
-}
+             $oldpassword = $this->input->post('old_password');
+             $newpassword= $this->input->post('new_password');
+             $newcpassword=$this->input->post('cnew_password');
+               
+            $data=array(
+                'old_password'=>$this->input->post('old_password'),
+                'new_password'=>$this->input->post('new_password'),
+                'cnew_password'=>$this->input->post('cnew_password'),
+
+            );
+         if($_SERVER['REQUEST_METHOD']=='POST'){
+
+           
+              if($newpassword==$newcpassword){
+            
+             
+               $ret= $this->user_model->change_pwd();
+
+                   if($ret){
+                    $data['msg']="SUCCESS";
+                   }else{
+                    $data['emsg']="Failed";
+                   }
+                 
+              }
+              else{
+         
+          }
+        }
+            
+        }
+        else{
+
+
+            echo "Not logged in";
+            redirect('admin');
+        }
+
+
+    }
 
 
     

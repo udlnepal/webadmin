@@ -1,6 +1,17 @@
   
     <?php echo $this->session->flashdata('verify_msg'); ?>
- 
+
+
+
+<?php $attributes = array("name" => "edituserform");
+echo form_open("user/changepassword", $attributes);?>
+<?php if(isset($msg)){
+    echo "<span class='success'>".$msg."</span>";
+}
+if(isset($emsg)){
+    echo "<span class='error'>".$emsg."</span>";
+}
+?>
 
 <div class="main-wrapper">
         <!-- ============================================================== -->
@@ -22,30 +33,40 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="<?php echo base_url();?>assets/images/logo.png" alt="logo" /></span>
+                        <span class="db"><h4 class="text-white">Change Password</h4></span>
                     </div>
                     <!-- Form -->
-                  <?php $attributes = array("name" => "loginform");
-echo form_open("user/login", $attributes);?>
+                  <?php
+echo form_open("user/changepassword");?>
                         <div class="row ">
                             <div class="col-12">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
-                                    </div>
-                                   <input class="form-control form-control-lg" name="email" placeholder="Email-ID" type="text" />
-                                </div>
-                                <span style="color:red"><?php echo form_error('email'); ?></span>
+                                
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input class="form-control" name="password" placeholder="Password" type="password" />
+                                    <input class="form-control" name="old_password" id="old_password" placeholder="Old Password" type="password" />
                                 </div>
-                                <span style="color:red"><?php echo form_error('password'); ?></span>
+                                <span style="color:red"><?php echo form_error('old_password'); ?></span>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-success text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input class="form-control" name="new_password" id="new_password" placeholder="New Password" type="password" />
+                                </div>
+                                <span style="color:red"><?php echo form_error('new_password'); ?></span>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-success text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input class="form-control" name="cnew_password" id="cnew_password" placeholder="Confirm New Password" type="password" />
+                                </div>
+                                <span style="color:red"><?php echo form_error('cnew_password'); ?></span>
+
+
                             </div>
                         </div>
-                        <h5 class="text-white">New Member <a href="register" class="text-success">Register Here!</a></h5>
+                       <!--  <h5 class="text-white">New Member <a href="register" class="text-success">Register Here!</a></h5> -->
                         <p style="color:green; font-style:bold"><?php echo $this->session->flashdata('msg_success'); ?></p>
 <p style="color:red; font-style:bold"><?php echo $this->session->flashdata('msg_error'); ?></p>
                         <div class="row border-top border-secondary">
@@ -53,7 +74,7 @@ echo form_open("user/login", $attributes);?>
                                 <div class="form-group">
                                     <div class="p-t-20">
                                         <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-success float-right" type="submit">Login</button>
+                                        <button class="btn btn-success float-right" type="submit">Update</button>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +98,7 @@ echo form_open("user/login", $attributes);?>
                             <!-- pwd -->
                             <div class="row m-t-20 p-t-20 border-top border-secondary">
                                 <div class="col-12">
-                                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
+                                    <a class="btn btn-success" href="<?php echo base_url('user/login'); ?>" id="to-login" name="action">Back To Login</a>
                                     <button class="btn btn-info float-right" type="button" name="action">Recover</button>
                                 </div>
                             </div>

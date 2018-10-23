@@ -14,8 +14,13 @@
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>assets/dist/css/style.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/dist/css/sum.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/extra-libs/select2/dist/css/select2.min.css'); ?>" rel="stylesheet" type="text/css">
+
       <script src="<?php echo base_url();?>assets/libs/jquery/dist/jquery.min.js"></script>
       <script src="<?php echo base_url();?>assets/extra-libs/ckeditor/ckeditor.js"></script>
+
+      <script src="<?php echo base_url('assets/extra-libs/select2/dist/js/select2.js'); ?>" type="text/javascript"></script>
+
 </head>
 
 <body>

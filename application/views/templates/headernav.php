@@ -174,7 +174,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?php echo site_url('user/logout'); ?>"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
-                                <div class="p-l-30 p-10 text-center"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">Change Password</a></div>
+                                <div class="p-l-30 p-10 text-center"><a href="<?php echo site_url('user/changepassword'); ?>" class="btn btn-sm btn-success btn-rounded">Change Password</a></div>
                             </div>
                         </li>
                         <!-- ============================================================== -->
