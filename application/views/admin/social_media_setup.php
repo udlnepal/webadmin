@@ -36,7 +36,9 @@
             		<div class="card">
                             <div class="card-body">
                                 <div class="col-lg-12">
-                                    
+                                     <?php if(!empty(validation_errors())){?>
+                                    <div class="alert alert-danger"> <?php echo validation_errors(); ?></div>
+                                   <?php }?>
                                         <h4 class="card-title">Social Media Setup</h4>
                                    
                                     <div class="clearfix"></div>
@@ -51,11 +53,14 @@
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-striped">
                                                 <tr>
-                                                  <th width="20%">Address</th>
-                                                  <th width="15%">Phone No.</th>
-                                                  <th width="20%">Email</th>
-                                                  <th width="15%">Opening Hours</th>
-                                                  <th width="15%">Action</th></tr>
+                                                  <th width="80%">Social Medias Selected</th><th>Action</th>
+                                                </tr>
+                                                <?php foreach($social_media_setup as $key=>$sms): ?>
+                                                <tr>
+                                                  <td><?php echo $sms['sm_title'] ?></td><td></td>
+
+                                                </tr>
+                                                <?php endforeach; ?>
                                              
                                             </table>
                                         </div>
@@ -70,9 +75,10 @@
             <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open('admin/contact_setup/addcontact'); ?>
+    <?php echo form_open('admin/social_media_setup/add'); ?>
     <div class="modal-content">
       <div class="modal-header">
+
         <h5 class="modal-title" id="exampleModalLabel">Add Social</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -85,11 +91,11 @@
         		<div class="form-group row">
                 <label for="address" class="col-sm-3 text-left control-label col-form-label">Select Social:</label>
                 <div class="col-sm-9">
-                    <select id="state" class="form-control" multiple="multiple" style="width:100%;">
-  <option >Facebook</option>
-  <option>Twitter</option>
-  <option >Youtube</option>
-</select>
+                    <select id="sm_title" name="sm_title" class="form-control" multiple="multiple" style="width:100%;">
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="youtube" >Youtube</option>
+                  </select>
                 </div>               
         </div>
                     
@@ -129,38 +135,16 @@
             
         });
 });
-/*$(".js-example-tokenizer").select2({
-    tags: true,
-    tokenSeparators: [',', ' ']
-})
 
-
-$('select').select2({
-  insertTag: function (data, tag) {
-    // Insert the tag at the end of the results
-    data.push(tag);
-  }
-});*/
 
 </script>
 <script type="text/javascript">
  
-    $("#state").select2({
+    $("#sm_title").select2({
       tags: true
     });
       
-   /* $("#btn-add-state").on("click", function(){
-      var newStateVal = $("#new-state").val();
-      // Set the value, creating a new option if necessary
-      if ($("#state").find("option[value=" + newStateVal + "]").length) {
-        $("#state").val(newStateVal).trigger("change");
-      } else { 
-        // Create the DOM option that is pre-selected by default
-        var newState = new Option(newStateVal, newStateVal, true, true);
-        // Append it to the select
-        $("#state").append(newState).trigger('change');
-      } 
-    });  */
+  
 
 
 </script>
