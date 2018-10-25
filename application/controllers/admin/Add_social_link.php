@@ -1,6 +1,6 @@
 <?php 
 include_once(APPPATH.'controllers/Admin_controller.php');
-class Social_media_setup extends Admin_controller{
+class Add_social_link extends Admin_controller{
 
  public function __construct()
   	{
@@ -9,6 +9,7 @@ class Social_media_setup extends Admin_controller{
 		$this->load->model('admin_model');
 		$this->load->model('menu_setup_model');
 		$this->load->model('social_media_setup_model');
+		$this->load->model('add_social_link_model');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library(array('session', 'form_validation'));
 	}
@@ -16,42 +17,34 @@ class Social_media_setup extends Admin_controller{
 public function index(){
 $data['titlename']=$this->admin_model->get_logged_user();
 $data['social_media_setup']=$this->social_media_setup_model->get_social_media();
+$data['social_media']=$this->add_social_link_model->get_social_with_link();
 $this->load->view('templates/header');
 $this->load->view('templates/headernav',$data);
 $this->load->view('templates/sidebar');
-$this->load->view('admin/social_media_setup');
+$this->load->view('admin/add_social_link',$data);
 $this->load->view('templates/footer');
 }
 
 public function add(){
-	$this->form_validation->set_rules('sm_title','Social Media Title','required','alpha_dash','is_unique[social_media_setup.sm_title]');
+	$this->form_validation->set_rules('sm_title','Social Media','required');
+	$this->form_validation->set_rules('soc_user','Username','required');
 	if($this->form_validation->run()==FALSE)
 	{
-		redirect('admin/social_media_setup',$data);
+	//	echo "false";exit;
+		redirect('admin/add_social_link',$data);
 
 	}
 	else{
-		$this->social_media_setup_model->setup_social();
-		redirect('admin/social_media_setup',$data);
+		//echo "true";exit;
+		$this->add_social_link_model->setup_social_link();
+		redirect('admin/add_social_link',$data);
 		}
 }
 
-public function delete(){
-	$sms_id=$this->uri->segment(4);
-  if($sms_id==0){
-    error_404();
-  }
-  $this->social_media_setup_model->delete_social($sms_id);
-  redirect('admin/social_media_setup');
+
+
+
+
+/* write above here */
 }
-
-
-
-
-	
-
-
-
-
-/*write above here*/
-}
+?>

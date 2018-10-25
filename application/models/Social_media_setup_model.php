@@ -25,6 +25,13 @@ public function get_social_media(){
     return $query->result_array();
 }
 
+
+public function delete_social($sms_id){
+	$this->db->where('sms_id',$sms_id);
+	return $this->db->delete('social_media_setup');
+
+}
+
 /*write above here*/
 }
 ?>

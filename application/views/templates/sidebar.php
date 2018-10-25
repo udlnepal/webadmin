@@ -39,13 +39,13 @@
                             </ul>
                         </li>
                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url('admin/contact_setup'); ?>" aria-expanded="false"><i class="mdi mdi-email-open"></i><span class="hide-menu">Contact Setup</span></a></li>
-
-                     <!--    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-forum"></i><span class="hide-menu">Contact Setup </span></a>
+ 
+                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-twitter"></i><span class="hide-menu">Social Media Setup </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="<?php echo base_url('admin/contact_setup'); ?>" class="sidebar-link"><i class="mdi mdi-facebook-box"></i><span class="hide-menu"> Social </span></a></li>
-                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="mdi mdi-email-open"></i><span class="hide-menu"> Contact Us </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo base_url('admin/social_media_setup'); ?>" class="sidebar-link"><i class="mdi mdi-facebook-box"></i><span class="hide-menu"> Social Media Select</span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo base_url('admin/add_social_link'); ?>" class="sidebar-link"><i class="mdi mdi-link"></i><span class="hide-menu"> Add Links </span></a></li>
                             </ul>
-                        </li> -->
+                        </li> 
 
                       <!--  <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-elements.html" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Events Setup</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Addons </span></a>
