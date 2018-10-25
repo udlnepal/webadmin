@@ -5,7 +5,7 @@ public function __construct()
 {
 	
 }
-public function setup_social_link(){
+public function setup_social_link($social_id=0){
 
 	//$this->load->helper('url');
 	$data=array(
@@ -14,7 +14,15 @@ public function setup_social_link(){
 
 		
 	);	
-		return $this->db->insert('social_media',$data);
+
+       
+        if ($social_id == 0) {
+           
+            return $this->db->insert('social_media', $data);
+        } else {
+            $this->db->where('social_id', $social_id);
+            return $this->db->update('social_media', $data);
+        }
 	
 }
 
@@ -27,6 +35,11 @@ public function get_social_with_link(){
 	return $query->result_array();
 }
 
+
+public function delete_social_link($social_id){
+	 $this->db->where('social_id', $social_id);
+        return $this->db->delete('social_media');
+}
 
 /*Above Here*/
 }

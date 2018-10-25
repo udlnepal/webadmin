@@ -54,7 +54,7 @@
                                            <?php foreach($social_media as $key=>$data): ?>
                                              <tr><td><?php echo $data['sm_title']; ?></td><td><?php echo $data['soc_user']; ?></td><td>
                                                  <a target="_blank" href="http://www.<?php echo $data['sm_title'] ?>.com/<?php echo $data['soc_user'] ?>">http://www.<?php echo $data['sm_title'] ?>.com/<?php echo $data['soc_user'] ?></a>
-                                             </td><td></td></tr>
+                                             </td><td><a class="btn btn-danger" href="<?php echo base_url('admin/add_social_link/delete/'.$data['social_id']) ?>">Delete</a></td></tr>
                                          <?php endforeach; ?>
                                             </table>
                                         </div>

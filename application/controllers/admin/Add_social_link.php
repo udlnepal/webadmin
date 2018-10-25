@@ -41,7 +41,19 @@ public function add(){
 		}
 }
 
+public function delete(){
+$social_id=$this->uri->segment(4);
 
+if($social_id==0){
+	error_404();
+
+}
+else{
+	$this->add_social_link_model->delete_social_link($social_id);
+	redirect('admin/add_social_link');
+}
+
+}
 
 
 

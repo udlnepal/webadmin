@@ -5,6 +5,7 @@ class User extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->model('admin_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
     }
@@ -101,40 +102,8 @@ class User extends CI_Controller {
 
        if ($this->session->userdata('is_logged_in')) {
 
-            $this->load->view('templates/header');
-            $this->load->view('user/changepassword');
-            $this->load->view('templates/footer');
+        $data['titlename']=$this->admin_model->get_logged_user();
 
-             $oldpassword = $this->input->post('old_password');
-             $newpassword= $this->input->post('new_password');
-             $newcpassword=$this->input->post('cnew_password');
-               
-            $data=array(
-                'old_password'=>$this->input->post('old_password'),
-                'new_password'=>$this->input->post('new_password'),
-                'cnew_password'=>$this->input->post('cnew_password'),
-
-            );
-         if($_SERVER['REQUEST_METHOD']=='POST'){
-
-           
-              if($newpassword==$newcpassword){
-            
-             
-               $ret= $this->user_model->change_pwd();
-
-                   if($ret){
-                    $data['msg']="SUCCESS";
-                   }else{
-                    $data['emsg']="Failed";
-                   }
-                 
-              }
-              else{
-         
-          }
-        }
-            
         }
         else{
 
