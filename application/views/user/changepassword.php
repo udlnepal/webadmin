@@ -5,13 +5,7 @@
 
 <?php $attributes = array("name" => "edituserform");
 echo form_open("user/changepassword", $attributes);?>
-<?php if(isset($msg)){
-    echo "<span class='success'>".$msg."</span>";
-}
-if(isset($emsg)){
-    echo "<span class='error'>".$emsg."</span>";
-}
-?>
+
 
 <div class="main-wrapper">
         <!-- ============================================================== -->
@@ -34,6 +28,15 @@ if(isset($emsg)){
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
                         <span class="db"><h4 class="text-white">Change Password</h4></span>
+                       <h5 class="text-danger"><?php echo $this->session->flashdata('error'); ?></h5>
+                        <?php if(isset($msg)){
+    echo "<span class='text-success'>".$msg."</span>";
+}
+if(isset($emsg)){
+    echo "<span class='text-danger'>".$emsg."</span>";
+}
+?>
+
                     </div>
                     <!-- Form -->
                   <?php

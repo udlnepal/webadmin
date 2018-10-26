@@ -99,19 +99,51 @@ class User extends CI_Controller {
 
 
     public function changepassword(){   
+ $oldpassword = $this->input->post('old_password');
+            $newpassword= $this->input->post('new_password');
+            $newcpassword=$this->input->post('cnew_password');
 
-       if ($this->session->userdata('is_logged_in')) {
+            $data=array();
 
-        $data['titlename']=$this->admin_model->get_logged_user();
+       
+
+        if ($this->session->userdata('is_logged_in')) {
+            $this->load->view('templates/header');
+            
+            // $this->load->view('user/edituser');
+
+            // echo $_SERVER['REQUEST_METHOD'];exit;
+
+         
+         if($_SERVER['REQUEST_METHOD']=='POST'){
+              if($newpassword==$newcpassword){
+                $this->session->set_flashdata('Notmatched','Confirm Password didnt match!');
+                //  $this->load->view('user/edituser');
+               $ret= $this->user_model->change_pwd();
+
+                   if($ret){
+                    $data['msg']="Password Changed Successfully!";
+                   }else{
+                    $data['emsg']="OOPs Something Went Wrong!";
+                   }
+                   // print_r($data);exit;
+              }
+              else{
+            // echo "shello";    
+          }
+        }
+             $this->load->view('user/changepassword',$data);
+             $this->load->view('templates/footer');
+        
+
+
 
         }
         else{
 
-
             echo "Not logged in";
             redirect('admin');
         }
-
 
     }
 
