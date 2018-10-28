@@ -54,7 +54,9 @@
                                            <?php foreach($social_media as $key=>$data): ?>
                                              <tr><td><?php echo $data['sm_title']; ?></td><td><?php echo $data['soc_user']; ?></td><td>
                                                  <a target="_blank" href="http://www.<?php echo $data['sm_title'] ?>.com/<?php echo $data['soc_user'] ?>">http://www.<?php echo $data['sm_title'] ?>.com/<?php echo $data['soc_user'] ?></a>
-                                             </td><td><a class="btn btn-danger" href="<?php echo base_url('admin/add_social_link/delete/'.$data['social_id']) ?>">Delete</a></td></tr>
+                                             </td><td>
+                                                <a class="btn btn-warning editSocial" data-toggle="modal" data-target="#editModal" data-social_id="<?php echo $data['social_id'] ?>" data-sm_title="<?php echo $data['sm_title'] ?>" data-soc_user="<?php echo $data['soc_user'] ?>">Edit</a>    
+                                                <a class="btn btn-danger" href="<?php echo base_url('admin/add_social_link/delete/'.$data['social_id']) ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td></tr>
                                          <?php endforeach; ?>
                                             </table>
                                         </div>
@@ -115,22 +117,20 @@
 
 <script>
     $(function(){
-        $(document).on("click", ".editContent", function () {
+        $(document).on("click", ".editSocial", function () {
            
-            var cs_id = $(this).data('cs_id');
-            var address= $(this).data('address');
-            var phone=$(this).data('phone');
-            var email =$(this).data('email');
-            var opening_hours =$(this).data('opening_hours');
+            var social_id = $(this).data('social_id');
+            var sm_title= $(this).data('sm_title');
+            var soc_user=$(this).data('soc_user');
+           
            
             
 
-            $(".modal-body .form-group #address").val(address);
-            $(".modal-body .form-group #phone").val(phone);            
-            $(".modal-body .form-group #email").val(email);
-            $(".modal-body .form-group #opening_hours").val(opening_hours);
+            $(".modal-body .form-group #sm_title").val(sm_title);
+            $(".modal-body .form-group #soc_user").val(soc_user);            
+         
           
-            $("#editModal form").attr('action','contact_setup/editcontact/'+cs_id);            
+            $("#editModal form").attr('action','add_social_link/edit/'+social_id);            
             $('#editModal').modal('show');
             
         });
@@ -150,13 +150,15 @@
 </script>
 
 
-            <!-- Edit Modal -->
+<!-- editmodal -->
+
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-    <?php echo form_open(''); ?>
+    <?php echo form_open('admin/add_social_link/edit'); ?>
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Contact</h5>
+
+        <h5 class="modal-title" id="exampleModalLabel">Add Social Links</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -165,28 +167,22 @@
         <div class="row">
         <div class="col-lg-12">
                
+                <div class="form-group row">
+                <label for="address" class="col-sm-3 text-left control-label col-form-label">Select Social:</label>
+                <div class="col-sm-9">
+                   <!--  <select  name="sm_title" class="form-control"  style="width:100%;">
+                        <?php  foreach($social_media_setup as $key=>$smdata):?>
+                        <option value="<?php echo $smdata['sms_id'] ?>"><?php echo $smdata['sm_title'] ?></option>
+                    <?php endforeach; ?>
+                  </select> -->
+
+                  <input  type="text" class="form-control" id="sm_title" disabled="disabled">
+                </div>               
+        </div>
             <div class="form-group row">
-                <label for="address" class="col-sm-3 text-left control-label col-form-label">Address:</label>
+                <label for="address" class="col-sm-3 text-left control-label col-form-label">Username:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" id="address" name="address" placeholder="Address">
-                </div>               
-        </div>
-         <div class="form-group row">
-                <label for="phone" class="col-sm-3 text-left control-label col-form-label">Phone:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required=""  id="phone" name="phone" placeholder="Phone">
-                </div>               
-        </div>
-        <div class="form-group row">
-                <label for="email" class="col-sm-3 text-left control-label col-form-label">Email:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" id="email" name="email" placeholder="Email">
-                </div>               
-        </div>
-        <div class="form-group row">
-                <label for="opening hours" class="col-sm-3 text-left control-label col-form-label">Opening Hours:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" value="" required="" id="opening_hours" name="opening_hours" placeholder="Opening Hours">
+                    <input type="text" class="form-control" name="soc_user" id="soc_user" placeholder="Username">
                 </div>               
         </div>
                     

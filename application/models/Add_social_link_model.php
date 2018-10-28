@@ -8,18 +8,26 @@ public function __construct()
 public function setup_social_link($social_id=0){
 
 	//$this->load->helper('url');
-	$data=array(
+	
+
+       
+        if ($social_id == 0) {
+        	$data=array(
 		'sm_id'=>$this->input->post('sm_title'),
 		'soc_user'=>$this->input->post('soc_user'),
 
 		
 	);	
-
-       
-        if ($social_id == 0) {
            
             return $this->db->insert('social_media', $data);
         } else {
+        	$data=array(
+		//'sm_id'=>$this->input->post('sm_title'),
+		'soc_user'=>$this->input->post('soc_user'),
+
+		
+	);	
+
             $this->db->where('social_id', $social_id);
             return $this->db->update('social_media', $data);
         }
