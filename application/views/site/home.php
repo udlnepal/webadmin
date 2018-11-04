@@ -192,89 +192,30 @@
 			</div>
 			<div class="row">
 				<!-- course item -->
+				<?php foreach($home_content as $key=>$hc): ?>
+					
+				<?php if($hc['c_order']==3){ ?>
+
 				<div class="col-lg-4 col-md-6 course-item">
 					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/1.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/media/<?php echo $hc['cimage_name']; ?>" alt="<?php echo $hc['h_title'] ?>">
 						<div class="course-cat">
-							<span>BUSINESS</span>
+							<span><?php echo $hc['h_title'] ?></span>
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Master's Degree in <br>Business Studies (MBS)</h4>
+						<div class="date"><i class="fa fa-clock-o"></i> <?php $datehome=explode(" ",$hc['h_date']);
+
+									echo $datehome[0];
+								 ?></div>
+						<h4><?php echo $hc['h_description'] ?></h4>
 						<!-- <h4 class="cource-price">$100<span>/month</span></h4> -->
 					</div>
 				</div>
+					<?php } endforeach; ?>
+
 				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/2.jpg" alt="">
-						<div class="course-cat">
-							<span>ENGINEERING</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Bachelor's Degree<br> in Civil Engineering (BCE) </h4>
-						<!-- <h4 class="cource-price">$150<span>/month</span></h4> -->
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/3.jpg" alt="">
-						<div class="course-cat">
-							<span>MEDICAL</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Bachelors Degree<br> Medical Science</h4>
-						<!-- <h4 class="cource-price">$180<span>/month</span></h4> -->
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/4.jpg" alt="">
-						<div class="course-cat">
-							<span>HUMANITIES</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Masters Degree in various faculties of Arts.</h4>
-					<!-- 	<h4 class="cource-price">$150<span>/month</span></h4> -->
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/5.jpg" alt="">
-						<div class="course-cat">
-							<span>ENGINEERING</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Bachelors Degree in<br>Computer Engineering</h4>
-					<!-- 	<h4 class="cource-price">$250<span>/month</span></h4> -->
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/course/6.jpg" alt="">
-						<div class="course-cat">
-							<span>BUSINESS</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Bachelor's Degree in <br>Business Administration (BBA)</h4>
-						<!-- <h4 class="cource-price">$150<span>/month</span></h4> -->
-					</div>
-				</div>
+			
 			</div>
 		</div>
 	</section>
