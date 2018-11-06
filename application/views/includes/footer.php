@@ -8,7 +8,9 @@
 					<div class="about-widget">
 						<div style="margin-top:10px;">
 						<img src="<?php echo base_url(); ?>assets/img/logo.png" alt="purbanchal university" style="max-height:26px; background: #fff;float:left; border-radius: 50%;">
-						<h6 class="pull-left" style="color:#fff; margin-left:10px;">PURBANCHAL UNIVERSITY</h6>
+						<h6 class="pull-left" style="color:#fff; margin-left:10px;"><?php foreach ($header_title_setup as $ht_item): ?>
+		<?php echo $ht_item['site_title']; ?>
+			<?php endforeach; ?></h6>
 						</div>
 						<div class="clearfix"></div>
 						<p>Lorem ipsum dolor sit amet, consecter adipiscing elite. Donec minos varius, viverra justo ut, aliquet nisl.</p>
@@ -77,19 +79,21 @@
 				<!-- widget -->
 				<div class="col-sm-6 col-lg-3 footer-widget">
 					<h6 class="fw-title">CONTACT</h6>
+					<?php foreach($contact_setup as $key=>$csdata) ?>
 					<ul class="contact">
-						<li><p><i class="fa fa-map-marker"></i> Puspalal chowk,Biratnagar, Nepal</p></li>
-						<li><p><i class="fa fa-phone"></i> 977-021-463701/2/3/4/5/6/7/8/9</p></li>
-						<li><p><i class="fa fa-envelope"></i> nfo@purbuniv.edu.np</p></li>
-						<li><p><i class="fa fa-clock-o"></i> Monday - Friday, 08:00AM - 06:00 PM</p></li>
+						<li><p><i class="fa fa-map-marker"></i><?php echo $csdata['address'] ?></p></li>
+						<li><p><i class="fa fa-phone"></i><?php echo $csdata['phone'] ?></p></li>
+						<li><p><i class="fa fa-envelope"></i> <?php echo $csdata['email'] ?></p></li>
+						<li><p><i class="fa fa-clock-o"></i> <?php echo $csdata['opening_hours'] ?></p></li>
 					</ul>
+
 				</div>
 			</div>
 		</div>
 		<!-- copyright -->
 		<div class="copyright">
 			<div class="container">
-				<p>&copy; MiDas Technologies Pvt. Ltd</p>
+				<p>&copy; Unique Developers Lab</p>
 			</div>		
 		</div>
 	</footer>

@@ -154,21 +154,18 @@
 			<?php endforeach; ?>
 					</div>
 					<div class="enroll-list text-white">
+						
+				<?php foreach($home_content as $key=>$hc): ?>
+					
+				<?php if($hc['c_order']==2){ $count=0; ?>
 						<div class="enroll-list-item">
-							<span>1</span>
-							<h5>Contact</h5>
-							<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue.</p>
+							<span><?php echo $count; ?></span>
+							<h5><?php echo $hc['h_title'] ?></h5>
+							<p><?php  echo $hc['h_description']?></p>
 						</div>
-						<div class="enroll-list-item">
-							<span>2</span>
-							<h5>Consulting</h5>
-							<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue.</p>
-						</div>
-						<div class="enroll-list-item">
-							<span>3</span>
-							<h5>Register</h5>
-							<p>Lorem ipsum dolor sitdo amet, consectetur dont adipis elit. Vivamus interdum ultrices augue.</p>
-						</div>
+						<?php $count++;} endforeach; ?>
+
+					
 					</div>
 				</div>
 				<div class="col-lg-6 offset-lg-1 p-lg-0 p-4">
@@ -279,20 +276,32 @@
 			<?php endforeach; ?>
 			</div>
 			<div class="row">
+				
+	<?php foreach($home_content as $key=>$hc): ?>
+					
+				<?php if($hc['c_order']==4){ ?>
 				<div class="col-md-6 event-item">
 					<div class="event-thumb">
-						<img src="<?php echo base_url(); ?>assets/img/event/1.jpg" alt="">
+						<img src="<?php echo base_url(); ?>assets/img/media/<?php echo $hc['cimage_name'] ?>" alt="<?php echo $hc['h_title'] ?>">
 						<div class="event-date">
-							<span>24 Mar 2018</span>
+							<span><?php $datehome=explode(" ",$hc['h_date']);
+
+									echo $datehome[0];
+								 ?></span>
 						</div>
 					</div>
 					<div class="event-info">
-						<h4>The dos and don'ts of writing a personal<br>statement for languages</h4>
-						<p><i class="fa fa-calendar-o"></i> 08:00 AM - 10:00 AM <i class="fa fa-map-marker"></i> Center Building, Block A</p>
+						<h4><?php echo $hc['h_title'] ?></h4>
+						<p><i class="fa fa-calendar-o"></i> <?php $datehome=explode(" ",$hc['h_date']);
+
+									echo $datehome[1];
+								 ?><i class="fa fa-map-marker"></i> <?php echo $hc['h_location'] ?></p>
 						<a href="" class="event-readmore">REGISTER <i class="fa fa-angle-double-right"></i></a>
 					</div>
 				</div>
-				<div class="col-md-6 event-item">
+<?php } endforeach; ?>
+
+				<!-- <div class="col-md-6 event-item">
 					<div class="event-thumb">
 						<img src="<?php echo base_url(); ?>assets/img/event/2.jpg" alt="">
 						<div class="event-date">
@@ -304,7 +313,7 @@
 						<p><i class="fa fa-calendar-o"></i> 08:00 AM - 10:00 AM <i class="fa fa-map-marker"></i> Center Building, Block A</p>
 						<a href="" class="event-readmore">REGISTER <i class="fa fa-angle-double-right"></i></a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>

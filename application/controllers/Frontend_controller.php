@@ -15,6 +15,7 @@ class Frontend_controller extends CI_Controller {
          $this->load->model('image_setup_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library(array('session', 'form_validation'));
+        $this->load->model('contact_setup_model');
     
   //  print_r($data); exit;
     }
@@ -26,10 +27,11 @@ class Frontend_controller extends CI_Controller {
     $data['menu_setup']=$this->menu_setup_model->get_menu();
    // $data['menu_setup']=$this->menu_setup_model->get_page_content();
     $data['page_content_setup']=$this->page_content_setup_model->get_page_content();
+    $data['contact_setup']=$this->contact_setup_model->get_contact();
     $this->load->view('includes/header',$data);
 		$this->load->view('includes/navigation',$data);
 		$this->load->view($view,$data);
-		$this->load->view('includes/footer');
+		$this->load->view('includes/footer',$data);
 
     }
   }
