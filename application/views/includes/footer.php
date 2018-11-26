@@ -79,14 +79,14 @@
 				<!-- widget -->
 				<div class="col-sm-6 col-lg-3 footer-widget">
 					<h6 class="fw-title">CONTACT</h6>
-					<?php foreach($contact_setup as $key=>$csdata) ?>
+					<?php foreach($contact_setup as $key=>$csdata): ?>
 					<ul class="contact">
 						<li><p><i class="fa fa-map-marker"></i><?php echo $csdata['address'] ?></p></li>
 						<li><p><i class="fa fa-phone"></i><?php echo $csdata['phone'] ?></p></li>
 						<li><p><i class="fa fa-envelope"></i> <?php echo $csdata['email'] ?></p></li>
 						<li><p><i class="fa fa-clock-o"></i> <?php echo $csdata['opening_hours'] ?></p></li>
 					</ul>
-
+				<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
