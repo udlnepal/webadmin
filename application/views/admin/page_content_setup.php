@@ -51,7 +51,7 @@
                                               <tr>
                                                  
                                                   <td><?php echo $key+1; ?></td><td><?php echo $data['menu_name'];?></td><td><?php echo $data['page_title']; ?></td><td><?php echo $data['page_content'] ?></td><td>
-                                                    <a class="btn btn-warning edit_page_content" data-toggle="modal" data-target="#editModal" data-pc_id="<?php echo $data['pc_id']; ?>" data-menu_name="<?php echo $data['menu_name']; ?>" data-page_title="<?php echo $data['page_title']; ?>" data-page_content="<?php echo $data['page_content']; ?>">Edit</a>&nbsp;
+                                                    <a class="btn btn-warning edit_page_content" data-toggle="modal" data-target="#editModal" data-pc_id="<?php echo $data['pc_id']; ?>" data-menu_name="<?php echo $data['menu_name']; ?>" data-page_title="<?php echo $data['page_title']; ?>" data-page_content="<?php echo  htmlspecialchars($data['page_content']); ?> ">Edit</a>&nbsp;
                                                     <a href="<?php echo base_url('admin/page_content_setup/delete/'.$data['pc_id']); ?>" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                               </tr>
                                           <?php endforeach;?>
@@ -134,6 +134,10 @@
             var menu_name= $(this).data('menu_name');
             var page_title=$(this).data('page_title');
             var page_content =$(this).data('page_content');
+            CKEDITOR.instances['page_content'].setData(page_content);/*yeti gare pugne maal*/
+
+          //  CKEDITOR.instance.insertHTML(page_content);
+
           
             
 
